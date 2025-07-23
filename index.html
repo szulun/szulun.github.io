@@ -1,191 +1,47 @@
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap');
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zoey Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  <style>
     body {
-        margin: 0;
-        padding: 0;
-        font-family: 'DM Sans', sans-serif;
-        background-color: #f9f9f9;
-        color: #111;
-        line-height: 1.8;
-        font-size: 16px;
+      font-family: 'DM Sans', sans-serif;
+      background: #f9f9f9;
+      color: #111;
+      text-align: center;
+      padding: 4rem 2rem;
+      margin: 0;
     }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
     }
-
-    header {
-        background-color: #fff;
-        padding: 3rem 0;
-        border-bottom: 1px solid #ddd;
-        text-align: center;
+    p {
+      font-size: 1.2rem;
+      color: #555;
     }
-
-    .logo {
-        font-family: 'Playfair Display', serif;
-        font-size: 2.5rem;
-        font-weight: 600;
-        color: #111;
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background: #111;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: background 0.3s ease;
     }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 1rem;
+    a.button:hover {
+      background: #333;
     }
-
-    nav a {
-        text-decoration: none;
-        color: #555;
-        font-weight: 500;
-        font-size: 1rem;
-    }
-
-    nav a:hover {
-        color: #000;
-    }
-
-    .hero {
-        text-align: center;
-        padding: 4rem 2rem;
-    }
-
-    .hero h1 {
-        font-family: 'Playfair Display', serif;
-        font-size: 3rem;
-        color: #000;
-        margin-bottom: 1rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.3rem;
-        color: #444;
-        margin-bottom: 2rem;
-    }
-
-    .hero-description {
-        max-width: 600px;
-        margin: 0 auto;
-        color: #666;
-        margin-bottom: 2rem;
-    }
-
-    .cta-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .cta-button {
-        padding: 0.75rem 1.5rem;
-        font-weight: 600;
-        font-size: 1rem;
-        border-radius: 30px;
-        text-decoration: none;
-        transition: 0.3s ease;
-    }
-
-    .cta-primary {
-        background-color: #111;
-        color: white;
-        border: none;
-    }
-
-    .cta-primary:hover {
-        background-color: #333;
-    }
-
-    .cta-secondary {
-        background: transparent;
-        border: 2px solid #111;
-        color: #111;
-    }
-
-    .cta-secondary:hover {
-        background: #111;
-        color: #fff;
-    }
-
-    .section {
-        background: #fff;
-        margin: 3rem 0;
-        padding: 3rem;
-        border-radius: 12px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    }
-
-    .section-title {
-        font-family: 'Playfair Display', serif;
-        font-size: 2rem;
-        margin-bottom: 2rem;
-        text-align: center;
-        color: #111;
-        position: relative;
-    }
-
-    .section-title::after {
-        content: '';
-        width: 60px;
-        height: 3px;
-        background: linear-gradient(to right, #111, #444);
-        display: block;
-        margin: 0.5rem auto 0;
-        border-radius: 2px;
-    }
-
-    .stat-card, .project-card, .skill-category, .contact-item {
-        background: #fff;
-        border-radius: 10px;
-        padding: 2rem;
-        border: 1px solid #e0e0e0;
-        text-align: center;
-    }
-
-    .stat-number {
-        font-size: 2rem;
-        color: #000;
-        font-weight: 700;
-    }
-
-    .stat-label {
-        font-size: 0.95rem;
-        color: #666;
-    }
-
-    .project-title, .skill-category h3 {
-        color: #111;
-        font-size: 1.2rem;
-        font-weight: 600;
-    }
-
-    .project-description {
-        color: #555;
-        font-size: 0.95rem;
-        margin-top: 1rem;
-    }
-
-    .tech-tag, .skill-item {
-        background: #f0f0f0;
-        color: #444;
-        padding: 0.4rem 1rem;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        margin: 0.25rem;
-        display: inline-block;
-    }
-
-    footer {
-        text-align: center;
-        padding: 2rem;
-        font-size: 0.9rem;
-        color: #777;
-    }
-</style>
-
-<!-- 你可以將這段 <style> 放在原始 HTML <head> 裡，並保留原始結構，只替換 class 的樣式 -->
-<!-- 不只色調變成黑白灰，還選用了更現代專業的字體與更簡約的樣式 -->
+  </style>
+</head>
+<body>
+  <h1>Hello, I'm Zoey</h1>
+  <p>This is my portfolio site, built with GitHub Pages.</p>
+  <a class="button" href="#projects">View Projects</a>
+</body>
+</html>
