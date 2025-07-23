@@ -1,83 +1,914 @@
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szu Lun (Zoey) Huang - Data Scientist & Full-Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-black: #1a1a1a;
+            --secondary-black: #2a2a2a;
+            --light-gray: #f8f9fa;
+            --medium-gray: #6c757d;
+            --dark-gray: #343a40;
+            --border-gray: #e9ecef;
+            --accent-gray: #495057;
+        }
 
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'DM Sans', sans-serif;
-        background-color: #f9f9f9;
-        color: #111;
-        line-height: 1.8;
-        font-size: 16px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 3rem 1.5rem;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--primary-black);
+            background: #ffffff;
+            overflow-x: hidden;
+        }
 
-    h1, h2, h3 {
-        font-family: 'Playfair Display', serif;
-        color: #111;
-    }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+        }
 
-    h1 {
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
 
-    h2 {
-        font-size: 1.5rem;
-        margin-top: 2rem;
-        margin-bottom: 0.5rem;
-        border-bottom: 1px solid #ddd;
-        padding-bottom: 0.3rem;
-    }
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: all 0.4s ease;
+            border-bottom: 1px solid var(--border-gray);
+        }
 
-    .resume p, .resume li {
-        color: #444;
-        font-size: 0.95rem;
-        margin: 0.25rem 0;
-    }
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 1px 30px rgba(0, 0, 0, 0.08);
+            padding: 1rem 0;
+        }
 
-    .resume ul {
-        padding-left: 1.2rem;
-    }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    .contact {
-        margin-bottom: 2rem;
-        font-size: 0.95rem;
-    }
-</style>
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            letter-spacing: -0.5px;
+        }
 
-<div class="container resume">
-  <h1>Szu Lun (Zoey) Huang</h1>
-  <div class="contact">
-    <p>(408) 802-4397 | zoeyhuang1@gmail.com | <a href="https://linkedin.com/in/szulun-huang/">LinkedIn</a> | <a href="https://github.com/szulun">GitHub</a></p>
-  </div>
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
 
-  <h2>Skills</h2>
-  <p>Python, C++, Java, JavaScript, HTML, CSS, React, Node.js, Express.js, RESTful APIs, Pandas, NumPy, Scikit-learn, SHAP, Feature Engineering, Local AI Integration (Llama), SQL, MongoDB, Git, Linux, Heroku, Render, Excel, PyGame</p>
+        .nav-links a {
+            text-decoration: none;
+            color: var(--accent-gray);
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            position: relative;
+            text-transform: uppercase;
+        }
 
-  <h2>Education</h2>
-  <ul>
-    <li><strong>Bachelor of Data Science</strong>, UC Berkeley (8/2025 – 6/2027 Expected)</li>
-    <li><strong>Full-Stack Software Development</strong>, TechWise by Talentsprint (1/2024 – 9/2025 Expected) — Google-sponsored, 10% acceptance rate</li>
-    <li><strong>Associate of Science</strong>, Computer Science & Mathematics, Foothill De Anza College (6/2025) — Scholarship + Dean’s List (2023–2024)</li>
-    <li><strong>MBA</strong>, NTUST + Exchange at University of Stuttgart, Germany</li>
-  </ul>
+        .nav-links a:hover {
+            color: var(--primary-black);
+        }
 
-  <h2>Projects</h2>
-  <ul>
-    <li><strong>BlackJack (MERN)</strong> – Full-stack BlackJack with Llama AI agent, real-time play, Render deployed</li>
-    <li><strong>Student Dropout Prediction (ML)</strong> – 1st place in Kaggle; used SHAP, ANN, XGBoost, F1 score ↑ from 0.78 → 0.87</li>
-    <li><strong>Interactive Game Development</strong> – 3-level PyGame with music/UI/assets, increased engagement by 70%</li>
-  </ul>
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -8px;
+            left: 0;
+            background: var(--primary-black);
+            transition: width 0.4s ease;
+        }
 
-  <h2>Experience</h2>
-  <ul>
-    <li><strong>Technical Consultant</strong>, IMVITEC (9/2024 – Present) – Architected frameworks, built engineering standards</li>
-    <li><strong>Channel Sales Representative</strong>, Tektronix Taiwan (2015 – 2022) – Automated workflows, improved conversion/sales</li>
-  </ul>
-</div>
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, #ffffff 0%, var(--light-gray) 100%);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text {
+            animation: fadeInLeft 1.2s ease;
+        }
+
+        .hero-text .greeting {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+            letter-spacing: -2px;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.3rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .hero-text .contact-info {
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-item {
+            display: block;
+            color: var(--accent-gray);
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item:hover {
+            color: var(--primary-black);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 0;
+            transition: all 0.4s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border: 2px solid var(--primary-black);
+        }
+
+        .btn-primary {
+            background: var(--primary-black);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary-black);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-black);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary-black);
+            color: white;
+        }
+
+        .hero-visual {
+            text-align: center;
+            animation: fadeInRight 1.2s ease;
+        }
+
+        .profile-container {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--secondary-black) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-initial {
+            font-size: 8rem;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-weight: 300;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 0;
+        }
+
+        section:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .skills-intro h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+        }
+
+        .skills-intro p {
+            color: var(--medium-gray);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-gray);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .skill-category h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+            border-bottom: 1px solid var(--border-gray);
+            padding-bottom: 0.5rem;
+        }
+
+        .skill-list {
+            color: var(--accent-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Education Section */
+        .education-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .education-item {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--primary-black);
+            transition: transform 0.3s ease;
+        }
+
+        .education-item:hover {
+            transform: translateX(10px);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .education-title {
+            font-size: 1.3rem;
+            color: var(--primary-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-school {
+            color: var(--medium-gray);
+            font-size: 1rem;
+        }
+
+        .education-date {
+            color: var(--accent-gray);
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .education-details {
+            color: var(--accent-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-gray);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-header {
+            background: var(--primary-black);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .project-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .project-content li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--accent-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .project-content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-black);
+            font-weight: bold;
+        }
+
+        /* Experience Section */
+        .experience-timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .experience-item {
+            background: white;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--primary-black);
+            transition: transform 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateX(10px);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1.5rem;
+        }
+
+        .experience-title {
+            font-size: 1.4rem;
+            color: var(--primary-black);
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-company {
+            color: var(--medium-gray);
+            font-size: 1rem;
+        }
+
+        .experience-date {
+            color: var(--accent-gray);
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .experience-achievements {
+            list-style: none;
+            padding: 0;
+        }
+
+        .experience-achievements li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--accent-gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .experience-achievements li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--primary-black);
+            font-size: 0.8rem;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border-gray);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+        }
+
+        .contact-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-black);
+        }
+
+        .contact-card a {
+            color: var(--medium-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            color: var(--primary-black);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-black);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .profile-container {
+                width: 300px;
+                height: 300px;
+            }
+
+            .profile-initial {
+                font-size: 6rem;
+            }
+
+            .experience-header,
+            .education-header {
+                flex-direction: column;
+                align-items: start;
+            }
+
+            .experience-date,
+            .education-date {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo">SZ</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="greeting">Hello, I'm</p>
+                    <h1>Szu Lun<br>(Zoey) Huang</h1>
+                    <p class="subtitle">Data Scientist & Full-Stack Developer<br>Transforming data into intelligent solutions</p>
+                    
+                    <div class="contact-info">
+                        <a href="tel:(408) 802-4397" class="contact-item">(408) 802-4397</a>
+                        <a href="mailto:zoeyhuang1@gmail.com" class="contact-item">zoeyhuang1@gmail.com</a>
+                        <a href="https://linkedin.com/in/szulun-huang/" class="contact-item" target="_blank">linkedin.com/in/szulun-huang/</a>
+                        <a href="https://github.com/szulun" class="contact-item" target="_blank">github.com/szulun</a>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn-primary">View Projects</a>
+                        <a href="#contact" class="btn-secondary">Get In Touch</a>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="profile-container">
+                        <div class="profile-initial">Z</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-subtitle">A comprehensive skill set spanning data science, machine learning, and full-stack development</p>
+            </div>
+
+            <div class="skills-container">
+                <div class="skills-intro">
+                    <h3>Core Competencies</h3>
+                    <p>Leveraging cutting-edge technologies to build intelligent systems and data-driven solutions. My expertise spans from machine learning algorithms to scalable web applications.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Programming Languages</h4>
+                        <p class="skill-list">Python, C++, Java, JavaScript, HTML, CSS, SQL</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Web Technologies</h4>
+                        <p class="skill-list">React, Node.js, Express.js, RESTful APIs, MERN Stack</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Data Science & ML</h4>
+                        <p class="skill-list">Pandas, NumPy, Scikit-learn, SHAP, Feature Engineering</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>AI Integration</h4>
+                        <p class="skill-list">Local AI Integration (Llama), Machine Learning Models</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Databases & Tools</h4>
+                        <p class="skill-list">MongoDB, Git, Linux, Heroku, Render, Excel</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Specialized</h4>
+                        <p class="skill-list">PyGame, Game Development, Data Visualization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <p class="section-subtitle">Academic foundation in data science, computer science, and business strategy</p>
+            </div>
+
+            <div class="education-timeline">
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <h3 class="education-title">Bachelor of Data Science</h3>
+                            <p class="education-school">University of California, Berkeley</p>
+                        </div>
+                        <span class="education-date">8/2025 - 6/2027 (Expected)</span>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <h3 class="education-title">Full-Stack Software Development</h3>
+                            <p class="education-school">TechWise by Talentsprint</p>
+                        </div>
+                        <span class="education-date">1/2024 - 9/2025 (Expected)</span>
+                    </div>
+                    <div class="education-details">
+                        <p>Selected for a highly competitive Google-sponsored 18-month software engineering program (acceptance rate 10%)</p>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <h3 class="education-title">Associate of Science in Computer Science and Mathematics</h3>
+                            <p class="education-school">Foothill De Anza College, Cupertino</p>
+                        </div>
+                        <span class="education-date">6/2025</span>
+                    </div>
+                    <div class="education-details">
+                        <p>2024 Academic Achievement Scholarship recipient<br>
+                        Dean's List: 2024 Winter/Spring/Fall, 2023 Summer/Fall</p>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <h3 class="education-title">MBA</h3>
+                            <p class="education-school">National Taiwan University of Science and Technology</p>
+                        </div>
+                        <span class="education-date">Exchange: University of Stuttgart, Germany</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Innovative solutions combining machine learning, full-stack development, and user experience design</p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🃏</div>
+                        <h3 class="project-title">BlackJack (MERN)</h3>
+                        <p class="project-subtitle">AI-Enhanced Gaming Platform</p>
+                    </div>
+                    <div class="project-content">
+                        <ul>
+                            <li>Built full-stack BlackJack game using MERN stack with real-time gameplay and responsive design</li>
+                            <li>Integrated local Llama AI agent for intelligent game assistance and strategy recommendations</li>
+                            <li>Enhanced user experience with dynamic audio features and card animations</li>
+                            <li>Deployed on Render with MongoDB Atlas integration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🎯</div>
+                        <h3 class="project-title">Student Dropout Prediction</h3>
+                        <p class="project-subtitle">Machine Learning Analytics</p>
+                    </div>
+                    <div class="project-content">
+                        <ul>
+                            <li><strong>1st place</strong> in Kaggle Credit Card Default Risk Prediction competition</li>
+                            <li>Developed classification models (ANN, XGBoost, SVM, Random Forest) to predict student dropout risk</li>
+                            <li>Engineered domain-specific features, improving ANN model's F1 score from 0.78 to 0.87</li>
+                            <li>Created SHAP visualizations for model interpretability and stakeholder decision-making</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🎮</div>
+                        <h3 class="project-title">Interactive Game Development</h3>
+                        <p class="project-subtitle">Educational Gaming Platform</p>
+                    </div>
+                    <div class="project-content">
+                        <ul>
+                            <li>Designed and implemented 3 game levels with TechWise content, boosting educational interaction by 70%</li>
+                            <li>Developed an interactive UI with personalized name input system to increase user engagement</li>
+                            <li>Refactored codebase into modular Python files, reducing loading times by 20%</li>
+                            <li>Composed and integrated custom game music and sound effects, increasing immersion by 80%</li>
+                            <li>Created all visual assets, resulting in 90% positive feedback on aesthetics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">Driving technical innovation and business growth through strategic leadership and data-driven solutions</p>
+            </div>
+
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Technical Consultant</h3>
+                            <p class="experience-company">IMVITEC Corporation, Taiwan</p>
+                        </div>
+                        <span class="experience-date">9/2024 – Present</span>
+                    </div>
+                    <ul class="experience-achievements">
+                        <li>Architected scalable product frameworks and established development standards for engineering teams</li>
+                        <li>Led cross-functional collaboration to design and implement technical solutions meeting client requirements</li>
+                        <li>Translated business requirements into development roadmaps and technical specifications, establishing quality standards</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <h3 class="experience-title">Channel Sales Representative</h3>
+                            <p class="experience-company">Tektronix Taiwan, Ltd., Hsinchu, Taiwan</p>
+                        </div>
+                        <span class="experience-date">2015 – 2022</span>
+                    </div>
+                    <ul class="experience-achievements">
+                        <li><strong>Reduced manual processing time by 80%</strong> through automated data processing solutions using Excel formulas</li>
+                        <li><strong>Achieved 50-90% cost reduction</strong> via cross-departmental workflow automation and system integration</li>
+                        <li><strong>Delivered 30% conversion improvement and 10% sales growth</strong> by building analytics pipelines for 150+ weekly customer interactions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="
