@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Szu Lun (Zoey) Huang - Data Scientist & Full-Stack Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Ms+Madi&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-black: #1a1a1a;
@@ -140,11 +140,13 @@
         }
 
         .hero-text h1 {
-            font-size: 4rem;
-            line-height: 1.1;
+            font-family: 'Ms Madi', cursive;
+            font-size: 5rem;
+            line-height: 1.2;
             margin-bottom: 1.5rem;
             color: var(--primary-black);
-            letter-spacing: -2px;
+            letter-spacing: 1px;
+            font-weight: 400;
         }
 
         .hero-text .subtitle {
@@ -502,11 +504,99 @@
             font-size: 0.8rem;
         }
 
-        /* Contact Section */
-        .contact-content {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto;
+        /* Contact Form */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-gray);
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--accent-gray);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--border-gray);
+            border-radius: 4px;
+            font-size: 1rem;
+            color: var(--primary-black);
+            transition: border-color 0.3s ease;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-black);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--primary-black);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background: var(--secondary-black);
+            transform: translateY(-2px);
+        }
+
+        .contact-info-section {
+            padding: 2rem 0;
+        }
+
+        .contact-info-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+        }
+
+        .contact-info-section p {
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+            line-height: 1.7;
         }
 
         .contact-grid {
@@ -624,7 +714,8 @@
             }
 
             .hero-text h1 {
-                font-size: 2.5rem;
+                font-size: 3.5rem;
+                letter-spacing: 0.5px;
             }
 
             .section-title {
@@ -649,6 +740,19 @@
             .experience-date,
             .education-date {
                 margin-top: 0.5rem;
+            }
+
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
             }
         }
     </style>
@@ -943,6 +1047,64 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="
+<section id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">Ready to discuss your next project or explore collaboration opportunities? I'd love to hear from you.</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-form">
+                <h3>Send me a message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project or how we can work together..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
+
+            <div class="contact-info-section">
+                <h3>Get in touch</h3>
+                <p>Whether you have a project in mind, want to discuss collaboration opportunities, or just want to say hello, I'm always open to connecting with fellow innovators and problem-solvers.</p>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <h4>Email</h4>
+                        <a href="mailto:zoeyhuang1@gmail.com">zoeyhuang1@gmail.com</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <h4>Phone</h4>
+                        <a href="tel:(408) 802-4397">(408) 802-4397</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">💼</div>
+                        <h4>LinkedIn</h4>
+                        <a href="https://linkedin.com/in/szulun-huang/" target="_blank">linkedin.com/in/szulun-huang/</a>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">🖤</div>
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/szulun" target="_blank">github.com/szulun</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
