@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Szu Lun (Zoey) Huang - Data Scientist & Full-Stack Developer</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Ms+Madi&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/emailjs-com/3.2.0/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <style>
         :root {
             --primary-black: #1a1a1a;
@@ -1096,12 +1096,12 @@
                     <h3>Send me a message</h3>
                     <form id="contactForm">
                         <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <label for="from_name">Your Name</label>
+                            <input type="text" id="from_name" name="from_name" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="from_email">Email Address</label>
+                            <input type="email" id="from_email" name="from_email" required>
                         </div>
                         <div class="form-group">
                             <label for="subject">Subject</label>
@@ -1191,14 +1191,26 @@
             const serviceID = 'service_yuk92ka';
             const templateID = 'template_22xmc7u';
             
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(() => {
+            // Get form data
+            const formData = {
+                from_name: document.getElementById('from_name').value,
+                from_email: document.getElementById('from_email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                to_name: 'Zoey'
+            };
+            
+            console.log('正在发送邮件，数据为:', formData);
+            
+            emailjs.send(serviceID, templateID, formData)
+                .then((response) => {
+                    console.log('邮件发送成功!', response.status, response.text);
                     showNotification('Message sent successfully!', 'success');
                     document.getElementById('contactForm').reset();
                 })
                 .catch((error) => {
-                    console.error('Error:', error);
-                    showNotification('Failed to send message. Please try again.', 'error');
+                    console.error('EmailJS 错误详情:', error);
+                    showNotification(`发送失败: ${error.text || error.message || '未知错误'}`, 'error');
                 })
                 .finally(() => {
                     // Re-enable button
