@@ -396,11 +396,56 @@
             color: white;
             padding: 2rem;
             text-align: center;
+            position: relative;
+            min-height: 200px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .project-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1;
+        }
+
+        .project-header > * {
+            position: relative;
+            z-index: 2;
         }
 
         .project-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
+        }
+
+        /* Project specific backgrounds */
+        .project-greens {
+            background-image: url('pics/GreensWrld-community.jpg');
+        }
+
+        .project-planb {
+            background-image: url('pics/plan B Dashboard.jpg');
+        }
+
+        .project-ml {
+            background-image: url('pics/ML.jpg');
+        }
+
+        .project-blackjack {
+            background-image: url('pics/GreensWrld-github commit.jpg');
+        }
+
+        .project-byte {
+            background-image: url('pics/plan B Portfolio.jpg');
         }
 
         .project-title {
@@ -903,20 +948,7 @@
                             <h3 class="education-title">Bachelor of Data Science</h3>
                             <p class="education-school">University of California, Berkeley</p>
                         </div>
-                        <span class="education-date">8/2025 - 6/2027 (Expected)</span>
-                    </div>
-                </div>
-
-                <div class="education-item">
-                    <div class="education-header">
-                        <div>
-                            <h3 class="education-title">Full-Stack Software Development</h3>
-                            <p class="education-school">TechWise by Talentsprint</p>
-                        </div>
-                        <span class="education-date">1/2024 - 9/2025 (Expected)</span>
-                    </div>
-                    <div class="education-details">
-                        <p>Selected for a highly competitive Google-sponsored 18-month software engineering program (acceptance rate 10%)</p>
+                        <span class="education-date">8/2025 - 6/2027</span>
                     </div>
                 </div>
 
@@ -926,7 +958,7 @@
                             <h3 class="education-title">Associate of Science in Computer Science and Mathematics</h3>
                             <p class="education-school">Foothill De Anza College, Cupertino</p>
                         </div>
-                        <span class="education-date">6/2025</span>
+                        <span class="education-date">9/2023 - 8/2025</span>
                     </div>
                     <div class="education-details">
                         <p>2024 Academic Achievement Scholarship recipient<br>
@@ -937,10 +969,36 @@
                 <div class="education-item">
                     <div class="education-header">
                         <div>
+                            <h3 class="education-title">Full-Stack Software Development</h3>
+                            <p class="education-school">TechWise by Talentsprint</p>
+                        </div>
+                        <span class="education-date">1/2024 - 9/2025</span>
+                    </div>
+                    <div class="education-details">
+                        <p>Google-sponsored program with 10% acceptance rate - Scholarship Recipient</p>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
                             <h3 class="education-title">MBA</h3>
                             <p class="education-school">National Taiwan University of Science and Technology</p>
                         </div>
-                        <span class="education-date">Exchange: University of Stuttgart, Germany</span>
+                        <span class="education-date">Completed</span>
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-header">
+                        <div>
+                            <h3 class="education-title">Exchange Student</h3>
+                            <p class="education-school">University of Stuttgart, Germany</p>
+                        </div>
+                        <span class="education-date">Exchange Program</span>
+                    </div>
+                    <div class="education-details">
+                        <p>Scholarship Recipient</p>
                     </div>
                 </div>
             </div>
@@ -957,7 +1015,7 @@
 
             <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-header">
+                    <div class="project-header project-greens">
                         <div class="project-icon">🌱</div>
                         <h3 class="project-title">GreensWrld</h3>
                         <p class="project-subtitle">AI-Powered Plant Care Assistant Platform</p>
@@ -970,11 +1028,17 @@
                             <li>Built backend services using Firebase Cloud Functions, handling real-time data processing and API integrations</li>
                             <li>Utilized version control (Git) and implemented feature branching workflow for efficient team collaboration</li>
                         </ul>
+                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
+                            <a href="https://github.com/SypherFleur/GreensWrld" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
+                            <a href="https://youtu.be/SUmRUsJVkGg" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--medium-gray); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">Ask Gaia V1 Demo</a>
+                            <a href="https://youtu.be/mInwhxtxI9o" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--medium-gray); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">Ask Gaia V2 Demo</a>
+                            <a href="https://www.youtube.com/watch?v=ehKdIO4QOlA" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--medium-gray); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">Community</a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-header">
+                    <div class="project-header project-planb">
                         <div class="project-icon">📈</div>
                         <h3 class="project-title">Plan B (MERN)</h3>
                         <p class="project-subtitle">Intelligent Trading Analytics Platform</p>
@@ -987,11 +1051,15 @@
                             <li>Learning-focused design – Included educational content and strategy observation tools to support continuous learning</li>
                             <li>Interactive dashboard – Designed a clean, intuitive UI for users to track portfolio performance and make informed decisions</li>
                         </ul>
+                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
+                            <a href="https://github.com/szulun/plan_b" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
+                            <a href="https://plan-b-frontend-nu.vercel.app/" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--medium-gray); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">Live Demo</a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-header">
+                    <div class="project-header project-blackjack">
                         <div class="project-icon">🃏</div>
                         <h3 class="project-title">BlackJack (MERN)</h3>
                         <p class="project-subtitle">AI-Enhanced Gaming Platform</p>
@@ -1003,11 +1071,14 @@
                             <li>Enhanced user experience with dynamic audio features and card animations</li>
                             <li>Deployed on Render with MongoDB Atlas integration</li>
                         </ul>
+                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
+                            <a href="https://github.com/szulun/blackjack001" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-header">
+                    <div class="project-header project-ml">
                         <div class="project-icon">🎯</div>
                         <h3 class="project-title">Student Dropout Prediction</h3>
                         <p class="project-subtitle">Machine Learning Analytics</p>
@@ -1019,11 +1090,14 @@
                             <li>Engineered domain-specific features, improving ANN model's F1 score from 0.78 to 0.87</li>
                             <li>Created SHAP visualizations for model interpretability and stakeholder decision-making</li>
                         </ul>
+                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
+                            <a href="https://github.com/szulun/TechWise-Project2-ML" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="project-card">
-                    <div class="project-header">
+                    <div class="project-header project-byte">
                         <div class="project-icon">🎮</div>
                         <h3 class="project-title">Interactive Game Development</h3>
                         <p class="project-subtitle">Educational Gaming Platform</p>
@@ -1036,6 +1110,9 @@
                             <li>Composed and integrated custom game music and sound effects, increasing immersion by 80%</li>
                             <li>Created all visual assets, resulting in 90% positive feedback on aesthetics</li>
                         </ul>
+                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
+                            <a href="https://github.com/Unclepablo1024/byte_by_byte" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1057,9 +1134,10 @@
                             <h3 class="experience-title">Technical Consultant</h3>
                             <p class="experience-company">IMVITEC Corporation, Taiwan</p>
                         </div>
-                        <span class="experience-date">9/2024 – Present</span>
+                        <span class="experience-date">9/2024 – 8/2025</span>
                     </div>
                     <ul class="experience-achievements">
+                        <li>Served as a technical liaison facilitating communication between business development and software engineering teams to ensure alignment on project requirements and deliverables</li>
                         <li>Architected scalable product frameworks and established development standards for engineering teams</li>
                         <li>Led cross-functional collaboration to design and implement technical solutions meeting client requirements</li>
                         <li>Translated business requirements into development roadmaps and technical specifications, establishing quality standards</li>
@@ -1072,11 +1150,12 @@
                             <h3 class="experience-title">Channel Sales Representative</h3>
                             <p class="experience-company">Tektronix Taiwan, Ltd., Hsinchu, Taiwan</p>
                         </div>
-                        <span class="experience-date">2015 – 2022</span>
+                        <span class="experience-date">2/2015 – 6/2022</span>
                     </div>
                     <ul class="experience-achievements">
+                        <li>Managed channel partner POS and inventory reporting for the distributor division while overseeing comprehensive operations for the Hsinchu branch office</li>
                         <li><strong>Reduced manual processing time by 80%</strong> through automated data processing solutions using Excel formulas</li>
-                        <li><strong>Achieved 50-90% cost reduction</strong> via cross-departmental workflow automation and system integration</li>
+                        <li><strong>Reduced office operational costs by 50%</strong> within 2 months through workflow optimization and vendor negotiations, coordinating with international and local teams</li>
                         <li><strong>Delivered 30% conversion improvement and 10% sales growth</strong> by building analytics pipelines for 150+ weekly customer interactions</li>
                     </ul>
                 </div>
