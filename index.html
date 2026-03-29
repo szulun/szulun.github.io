@@ -882,6 +882,7 @@
                     <li><a href="#education">Education</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
+                    <li><a href="#recognition">Awards</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="https://szulun.github.io/zoey_resume.pdf" target="_blank">Resume</a></li>
                 </ul>
@@ -1339,6 +1340,29 @@
         </div>
     </section>
 
+    <!-- Recognition Section -->
+    <section id="recognition">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Recognition & Awards</h2>
+                <p class="section-subtitle">Honors and achievements across academics, research, and technical competitions</p>
+            </div>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <ul class="experience-achievements">
+                        <li><strong>Best Technical Demo</strong> — Cell Culture Hackathon @ Monomer Bio (03/2026)</li>
+                        <li><strong>NAIRR Pilot Featured Tool</strong> — LLM Context Management Suite selected as open-source educational tool, integrated into UC Berkeley's Data Science curriculum</li>
+                        <li><strong>Berkeley Student Leadership Academy</strong> — Program Completion, AY 2025–26</li>
+                        <li><strong>TechWise Fellowship</strong> — Google-funded, top 10% acceptance rate; 1st place in internal ML competition</li>
+                        <li><strong>Dean's List</strong> — 5 consecutive quarters, Foothill De Anza College</li>
+                        <li><strong>2024 Academic Achievement Scholarship</strong> — Foothill De Anza College</li>
+                        <li><strong>Exchange Scholarship</strong> — University of Stuttgart, Germany</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact">
         <div class="container">
@@ -1502,3 +1526,14 @@
 
         // Scroll animations
         const observer = new IntersectionObserver((entries) => {
+                  entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('section').forEach(section => observer.observe(section));
+    </script>
+</body>
+</html>
