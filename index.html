@@ -884,7 +884,7 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#recognition">Awards</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://szulun.github.io/zoey_resume.pdf" target="_blank">Resume</a></li>
+                    <li><a href="https://szulun.github.io/Zoey_CV.pdf" target="_blank">CV</a></li>
                 </ul>
             </div>
         </div>
@@ -901,7 +901,7 @@
                     
                     <div class="contact-info">
                         <a href="tel:(408) 802-4397" class="contact-item">(408) 802-4397</a>
-                        <a href="/cdn-cgi/l/email-protection#3d4e4748557d5f584f565851584413585948" class="contact-item"><span class="__cf_email__" data-cfemail="780b020d10381a1d0a131d141d01561d1c0d">[email&#160;protected]</span></a>
+                        <a href="#" class="contact-item" id="heroEmail"></a>
                         <a href="https://linkedin.com/in/szulun-huang/" class="contact-item" target="_blank">linkedin.com/in/szulun-huang/</a>
                         <a href="https://github.com/szulun" class="contact-item" target="_blank">github.com/szulun</a>
                     </div>
@@ -1401,7 +1401,7 @@
                         <div class="contact-card">
                             <div class="contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
                             <h4>Email</h4>
-                            <a href="/cdn-cgi/l/email-protection#94e7eee1fcd4f6f1e6fff1f8f1edbaf1f0e1"><span class="__cf_email__" data-cfemail="25565f504d654740574e4049405c0b404150">[email&#160;protected]</span></a>
+                            <a href="#" id="contactEmail"></a>
                         </div>
                         <div class="contact-card">
                             <div class="contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.87 9.67 19.79 19.79 0 01.82 5.05 2 2 0 012.8 2.87h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10.9a16 16 0 006.18 6.18l1.19-1.19a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.75 2.03z"/></svg></div>
@@ -1431,7 +1431,19 @@
         </div>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
+        // Build email addresses via JS to prevent spam bots
+        const u = 'szuh';
+        const d = 'berkeley.edu';
+        const email = u + '@' + d;
+
+        const heroEmail = document.getElementById('heroEmail');
+        if (heroEmail) { heroEmail.href = 'mailto:' + email; heroEmail.textContent = email; }
+
+        const contactEmail = document.getElementById('contactEmail');
+        if (contactEmail) { contactEmail.href = 'mailto:' + email; contactEmail.textContent = email; }
+    </script>
+    <script>
         // ── Photo Carousel ──────────────────────────────────────────
         const slides = document.querySelectorAll('.carousel-slide');
         const dots   = document.querySelectorAll('.carousel-dot');
