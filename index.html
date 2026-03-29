@@ -459,8 +459,22 @@
         }
 
         .project-icon {
-            font-size: 3rem;
+            width: 3rem;
+            height: 3rem;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: white;
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .project-dna {
@@ -730,9 +744,22 @@
         }
 
         .contact-icon {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--primary-black);
+            width: 2rem;
+            height: 2rem;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: var(--primary-black);
+            fill: none;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .contact-card h4 {
@@ -856,7 +883,7 @@
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://szulun.github.io/zoey_resume.pdf" target="_blank">Resume</a></li>
+                    <li><a href="https://szulun.github.io/Zoey_CV.pdf" target="_blank">CV</a></li>
                 </ul>
             </div>
         </div>
@@ -873,7 +900,7 @@
                     
                     <div class="contact-info">
                         <a href="tel:(408) 802-4397" class="contact-item">(408) 802-4397</a>
-                        <a href="mailto:szuh@berkeley.edu" class="contact-item">szuh@berkeley.edu</a>
+                        <a href="/cdn-cgi/l/email-protection#3d4e4748557d5f584f565851584413585948" class="contact-item"><span class="__cf_email__" data-cfemail="780b020d10381a1d0a131d141d01561d1c0d">[email&#160;protected]</span></a>
                         <a href="https://linkedin.com/in/szulun-huang/" class="contact-item" target="_blank">linkedin.com/in/szulun-huang/</a>
                         <a href="https://github.com/szulun" class="contact-item" target="_blank">github.com/szulun</a>
                     </div>
@@ -1039,7 +1066,7 @@
                 <!-- LLM Context Management – NEW -->
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-icon">🧠</div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 2C7 2 5 4 5 6.5c0 .5.1 1 .3 1.5C3.9 8.8 3 10.3 3 12c0 2.2 1.4 4 3.4 4.7C6.9 18.6 8.6 20 10.5 20c.7 0 1.4-.2 2-.5.6.3 1.3.5 2 .5 1.9 0 3.6-1.4 4.1-3.3C20.6 16 22 14.2 22 12c0-1.7-.9-3.2-2.3-4 .2-.5.3-1 .3-1.5C20 4 18 2 15.5 2c-1 0-1.9.3-2.6.9-.4-.2-.8-.4-1.3-.6"/><path d="M12 6v6M9 9h6"/></svg></div>
                         <h3 class="project-title">LLM Context Management Suite</h3>
                         <p class="project-subtitle">Applied AI / Python · NAIRR Pilot Featured Tool</p>
                     </div>
@@ -1058,7 +1085,7 @@
                 <!-- Solar Inverter – NEW -->
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-icon">☀️</div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
                         <h3 class="project-title">Solar Inverter Efficiency Forecasting</h3>
                         <p class="project-subtitle">Time Series ML · January 2026</p>
                     </div>
@@ -1075,7 +1102,7 @@
 
                 <div class="project-card">
                     <div class="project-header project-rewear">
-                        <div class="project-icon">👶</div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 001 .74H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 001-.74l.58-3.57a2 2 0 00-1.35-2.23z"/></svg></div>
                         <h3 class="project-title">ReWearBaby</h3>
                         <p class="project-subtitle">Sustainable Baby Clothing Subscription | UC Berkeley Collider Cup</p>
                     </div>
@@ -1096,7 +1123,7 @@
 
                 <div class="project-card">
                     <div class="project-header project-dna">
-                        <div class="project-icon">📚</div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
                         <h3 class="project-title">DNA of Successful Startups – Published Research</h3>
                         <p class="project-subtitle">UC Berkeley ENGIN 183: How to Be a Futurist</p>
                     </div>
@@ -1115,8 +1142,7 @@
 
                 <div class="project-card">
                     <div class="project-header project-friendtale">
-                        <div class="project-icon">🎮</div>
-                        <h3 class="project-title">Friendtale – Roguelike Adventure Game</h3>
+                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 12h2M18 11v2"/></svg></div>
                         <p class="project-subtitle">UC Berkeley CS 61B Final Project</p>
                     </div>
                     <div class="project-content">
@@ -1135,7 +1161,7 @@
 
                 <div class="project-card">
                     <div class="project-header project-greens">
-                        <div class="project-icon">🌱</div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 20A7 7 0 014 13c0-5 5-10 7-10s7 5 7 10a7 7 0 01-7 7z"/><path d="M11 20V9M7.5 12.5L11 9l3.5 3.5"/></svg></div>
                         <h3 class="project-title">GreensWrld</h3>
                         <p class="project-subtitle">AI-Powered Plant Care Assistant Platform</p>
                     </div>
@@ -1156,7 +1182,7 @@
 
                 <div class="project-card">
                     <div class="project-header project-planb">
-                        <div class="project-icon">📈</div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
                         <h3 class="project-title">Plan B (MERN)</h3>
                         <p class="project-subtitle">Intelligent Trading Analytics Platform</p>
                     </div>
@@ -1176,7 +1202,7 @@
 
                 <div class="project-card">
                     <div class="project-header project-ml">
-                        <div class="project-icon">🎯</div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
                         <h3 class="project-title">Student Dropout Prediction</h3>
                         <p class="project-subtitle">Machine Learning Analytics</p>
                     </div>
@@ -1195,7 +1221,7 @@
 
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-icon">🃏</div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="14" height="18" rx="2"/><path d="M8 7h2M8 12h4M8 16h4"/><path d="M17 7h3a2 2 0 012 2v10a2 2 0 01-2 2h-3" stroke-dasharray="2 2"/></svg></div>
                         <h3 class="project-title">BlackJack (MERN)</h3>
                         <p class="project-subtitle">AI-Enhanced Gaming Platform</p>
                     </div>
@@ -1214,8 +1240,7 @@
 
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-icon">🎮</div>
-                        <h3 class="project-title">Interactive Game Development</h3>
+                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 12h2M18 11v2"/></svg></div>
                         <p class="project-subtitle">Educational Gaming Platform</p>
                     </div>
                     <div class="project-content">
@@ -1350,22 +1375,22 @@
                     
                     <div class="contact-grid">
                         <div class="contact-card">
-                            <div class="contact-icon">📧</div>
+                            <div class="contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
                             <h4>Email</h4>
-                            <a href="mailto:szuh@berkeley.edu">szuh@berkeley.edu</a>
+                            <a href="/cdn-cgi/l/email-protection#94e7eee1fcd4f6f1e6fff1f8f1edbaf1f0e1"><span class="__cf_email__" data-cfemail="25565f504d654740574e4049405c0b404150">[email&#160;protected]</span></a>
                         </div>
                         <div class="contact-card">
-                            <div class="contact-icon">📱</div>
+                            <div class="contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.87 9.67 19.79 19.79 0 01.82 5.05 2 2 0 012.8 2.87h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10.9a16 16 0 006.18 6.18l1.19-1.19a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.75 2.03z"/></svg></div>
                             <h4>Phone</h4>
                             <a href="tel:(408) 802-4397">(408) 802-4397</a>
                         </div>
                         <div class="contact-card">
-                            <div class="contact-icon">💼</div>
+                            <div class="contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7"/></svg></div>
                             <h4>LinkedIn</h4>
                             <a href="https://linkedin.com/in/szulun-huang/" target="_blank">linkedin.com/in/szulun-huang/</a>
                         </div>
                         <div class="contact-card">
-                            <div class="contact-icon">🖤</div>
+                            <div class="contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div>
                             <h4>GitHub</h4>
                             <a href="https://github.com/szulun" target="_blank">github.com/szulun</a>
                         </div>
@@ -1382,7 +1407,7 @@
         </div>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // ── Photo Carousel ──────────────────────────────────────────
         const slides = document.querySelectorAll('.carousel-slide');
         const dots   = document.querySelectorAll('.carousel-dot');
@@ -1477,14 +1502,3 @@
 
         // Scroll animations
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        document.querySelectorAll('section').forEach(section => observer.observe(section));
-    </script>
-</body>
-</html>
