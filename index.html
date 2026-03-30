@@ -884,7 +884,7 @@
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#recognition">Awards</a></li>
                     <li><a href="#contact">Contact</a></li>
-                    <li><a href="https://szulun.github.io/zoey_resume.pdf" target="_blank">resume</a></li>
+                    <li><a href="https://szulun.github.io/z_resume.pdf" target="_blank">Resume</a></li>
                 </ul>
             </div>
         </div>
@@ -1086,7 +1086,7 @@
                 <!-- Solar Inverter – NEW -->
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
+                        <div class="project-icon" style="font-size:3rem;">☀️</div>
                         <h3 class="project-title">Solar Inverter Efficiency Forecasting</h3>
                         <p class="project-subtitle">Time Series ML · January 2026</p>
                     </div>
@@ -1097,6 +1097,27 @@
                         </ul>
                         <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
                             <a href="https://github.com/szulun/Solar-Power-Generation" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solar ELT Pipeline -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon" style="font-size:3rem;">🔧</div>
+                        <h3 class="project-title">Solar Power ELT Pipeline</h3>
+                        <p class="project-subtitle">Data Engineering · Pandas, SQLite, Airflow, SQL</p>
+                    </div>
+                    <div class="project-content">
+                        <ul>
+                            <li>Built end-to-end ELT pipeline on 136,476 rows of real solar inverter data — Extract → Transform → Load into SQLite, simulating production Data Engineering workflows</li>
+                            <li>Engineered features (efficiency, hour, date), handled cross-plant date format inconsistencies, and forward-filled sensor dropout gaps</li>
+                            <li>Wrote SQL CTEs to answer business questions: daily yield, inverter ranking, and anomaly detection (flagging inverters >10% below plant average for maintenance)</li>
+                            <li>Scheduled automated daily pipeline using Apache Airflow DAG (06:00 UTC) with retry logic and email alerting</li>
+                            <li>Visualized peak generation windows (10:00–14:00), irradiation correlation, and hourly heatmaps using Matplotlib & Seaborn</li>
+                        </ul>
+                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
+                            <a href="https://github.com/szulun/Solar-ELT-Pipeline" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -1143,7 +1164,7 @@
 
                 <div class="project-card">
                     <div class="project-header project-friendtale">
-                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 12h2M18 11v2"/></svg></div>
+                        <div class="project-icon" style="font-size:3rem;">🎮</div>
                         <p class="project-subtitle">UC Berkeley CS 61B Final Project</p>
                     </div>
                     <div class="project-content">
@@ -1162,7 +1183,7 @@
 
                 <div class="project-card">
                     <div class="project-header project-greens">
-                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11 20A7 7 0 014 13c0-5 5-10 7-10s7 5 7 10a7 7 0 01-7 7z"/><path d="M11 20V9M7.5 12.5L11 9l3.5 3.5"/></svg></div>
+                        <div class="project-icon" style="font-size:3rem;">🌱</div>
                         <h3 class="project-title">GreensWrld</h3>
                         <p class="project-subtitle">AI-Powered Plant Care Assistant Platform</p>
                     </div>
@@ -1222,7 +1243,7 @@
 
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="14" height="18" rx="2"/><path d="M8 7h2M8 12h4M8 16h4"/><path d="M17 7h3a2 2 0 012 2v10a2 2 0 01-2 2h-3" stroke-dasharray="2 2"/></svg></div>
+                        <div class="project-icon" style="font-size:3rem;">🃏</div>
                         <h3 class="project-title">BlackJack (MERN)</h3>
                         <p class="project-subtitle">AI-Enhanced Gaming Platform</p>
                     </div>
@@ -1241,7 +1262,7 @@
 
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 12h2M18 11v2"/></svg></div>
+                        <div class="project-icon" style="font-size:3rem;">🎮</div>
                         <p class="project-subtitle">Educational Gaming Platform</p>
                     </div>
                     <div class="project-content">
