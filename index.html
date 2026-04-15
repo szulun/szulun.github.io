@@ -217,7 +217,7 @@
             animation: fadeInRight 1.2s ease;
         }
 
-        /* ── Photo Carousel ── */
+        /* Photo Carousel */
         .profile-container {
             width: 400px;
             height: 400px;
@@ -247,7 +247,6 @@
             display: block;
         }
 
-        /* dots */
         .carousel-dots {
             position: absolute;
             bottom: 12px;
@@ -445,10 +444,7 @@
         .project-header::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: rgba(0, 0, 0, 0.7);
             z-index: 1;
         }
@@ -477,67 +473,18 @@
             stroke-linejoin: round;
         }
 
-        .project-dna {
-            background-image: url('https://szulun.github.io/dna.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+        .project-dna      { background-image: url('https://szulun.github.io/dna.jpg'); background-size: cover; background-position: center; }
+        .project-friendtale { background-image: url('https://szulun.github.io/friendtale.png'); background-size: cover; background-position: center; }
+        .project-greens   { background-image: url('https://szulun.github.io/GreensWrld-askgaia.png'); background-size: cover; background-position: center; }
+        .project-planb    { background-image: url('https://szulun.github.io/plan B Dashboard.png'); background-size: cover; background-position: center; }
+        .project-ml       { background-image: url('https://szulun.github.io/ML.png'); background-size: cover; background-position: center; }
+        .project-rewear   { background-image: url('https://szulun.github.io/rewear.png'); background-size: cover; background-position: center; }
 
-        .project-friendtale {
-            background-image: url('https://szulun.github.io/friendtale.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        
-        .project-greens {
-            background-image: url('https://szulun.github.io/GreensWrld-askgaia.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+        .project-title    { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .project-subtitle { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
 
-        .project-planb {
-            background-image: url('https://szulun.github.io/plan B Dashboard.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .project-ml {
-            background-image: url('https://szulun.github.io/ML.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .project-rewear {
-            background-image: url('https://szulun.github.io/rewear.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .project-title {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-subtitle {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.9rem;
-        }
-
-        .project-content {
-            padding: 2rem;
-        }
-
-        .project-content ul {
-            list-style: none;
-            padding: 0;
-        }
-
+        .project-content { padding: 2rem; }
+        .project-content ul { list-style: none; padding: 0; }
         .project-content li {
             margin-bottom: 0.8rem;
             padding-left: 1.5rem;
@@ -546,7 +493,6 @@
             font-size: 0.95rem;
             line-height: 1.6;
         }
-
         .project-content li::before {
             content: '•';
             position: absolute;
@@ -556,10 +502,7 @@
         }
 
         /* Experience Section */
-        .experience-timeline {
-            max-width: 900px;
-            margin: 0 auto;
-        }
+        .experience-timeline { max-width: 900px; margin: 0 auto; }
 
         .experience-item {
             background: white;
@@ -571,9 +514,7 @@
             transition: transform 0.3s ease;
         }
 
-        .experience-item:hover {
-            transform: translateX(10px);
-        }
+        .experience-item:hover { transform: translateX(10px); }
 
         .experience-header {
             display: flex;
@@ -582,28 +523,11 @@
             margin-bottom: 1.5rem;
         }
 
-        .experience-title {
-            font-size: 1.4rem;
-            color: var(--primary-black);
-            margin-bottom: 0.5rem;
-        }
+        .experience-title { font-size: 1.4rem; color: var(--primary-black); margin-bottom: 0.5rem; }
+        .experience-company { color: var(--medium-gray); font-size: 1rem; }
+        .experience-date { color: var(--accent-gray); font-size: 0.9rem; white-space: nowrap; }
 
-        .experience-company {
-            color: var(--medium-gray);
-            font-size: 1rem;
-        }
-
-        .experience-date {
-            color: var(--accent-gray);
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-
-        .experience-achievements {
-            list-style: none;
-            padding: 0;
-        }
-
+        .experience-achievements { list-style: none; padding: 0; }
         .experience-achievements li {
             margin-bottom: 1rem;
             padding-left: 1.5rem;
@@ -612,13 +536,77 @@
             font-size: 0.95rem;
             line-height: 1.6;
         }
-
         .experience-achievements li::before {
             content: '▶';
             position: absolute;
             left: 0;
             color: var(--primary-black);
             font-size: 0.8rem;
+        }
+
+        /* GitHub Activity Section */
+        .gh-commit-row {
+            display: flex;
+            gap: 0.8rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid var(--border-gray);
+            align-items: flex-start;
+            text-decoration: none;
+            transition: background 0.2s ease;
+            border-radius: 4px;
+            margin: 0 -0.5rem;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+        .gh-commit-row:hover { background: var(--light-gray); }
+        .gh-dot {
+            width: 8px; height: 8px;
+            border-radius: 50%;
+            background: var(--primary-black);
+            margin-top: 6px;
+            flex-shrink: 0;
+        }
+        .gh-commit-msg {
+            font-size: 0.9rem;
+            color: var(--primary-black);
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 0.2rem;
+        }
+        .gh-commit-meta {
+            font-size: 0.78rem;
+            color: var(--medium-gray);
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+        .gh-repo-badge {
+            border: 1px solid var(--border-gray);
+            border-radius: 20px;
+            padding: 0.1rem 0.5rem;
+            color: var(--medium-gray);
+            text-decoration: none;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .gh-repo-badge:hover { border-color: var(--primary-black); color: var(--primary-black); }
+        .gh-filter-btn {
+            padding: 0.35rem 1rem;
+            font-size: 0.8rem;
+            border: 2px solid var(--primary-black);
+            background: transparent;
+            color: var(--primary-black);
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+        }
+        .gh-filter-btn.active,
+        .gh-filter-btn:hover {
+            background: var(--primary-black);
+            color: white;
         }
 
         /* Contact Form */
@@ -637,15 +625,9 @@
             border: 1px solid var(--border-gray);
         }
 
-        .contact-form h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-black);
-        }
+        .contact-form h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary-black); }
 
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
+        .form-group { margin-bottom: 1.5rem; }
 
         .form-group label {
             display: block;
@@ -670,15 +652,8 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-black);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
+        .form-group textarea:focus { outline: none; border-color: var(--primary-black); }
+        .form-group textarea { resize: vertical; min-height: 120px; }
 
         .submit-button {
             width: 100%;
@@ -695,32 +670,12 @@
             transition: all 0.3s ease;
         }
 
-        .submit-button:hover {
-            background: var(--secondary-black);
-            transform: translateY(-2px);
-        }
+        .submit-button:hover { background: var(--secondary-black); transform: translateY(-2px); }
+        .submit-button:disabled { background: var(--medium-gray); cursor: not-allowed; transform: none; }
 
-        .submit-button:disabled {
-            background: var(--medium-gray);
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .contact-info-section {
-            padding: 2rem 0;
-        }
-
-        .contact-info-section h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-black);
-        }
-
-        .contact-info-section p {
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-        }
+        .contact-info-section { padding: 2rem 0; }
+        .contact-info-section h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary-black); }
+        .contact-info-section p { color: var(--medium-gray); margin-bottom: 2rem; line-height: 1.7; }
 
         .contact-grid {
             display: grid;
@@ -739,13 +694,10 @@
             border: 1px solid var(--border-gray);
         }
 
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
+        .contact-card:hover { transform: translateY(-5px); }
 
         .contact-icon {
-            width: 2rem;
-            height: 2rem;
+            width: 2rem; height: 2rem;
             margin: 0 auto 1rem;
             display: flex;
             align-items: center;
@@ -753,8 +705,7 @@
         }
 
         .contact-icon svg {
-            width: 100%;
-            height: 100%;
+            width: 100%; height: 100%;
             stroke: var(--primary-black);
             fill: none;
             stroke-width: 1.5;
@@ -762,28 +713,14 @@
             stroke-linejoin: round;
         }
 
-        .contact-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary-black);
-        }
-
-        .contact-card a {
-            color: var(--medium-gray);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .contact-card a:hover {
-            color: var(--primary-black);
-        }
+        .contact-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--primary-black); }
+        .contact-card a { color: var(--medium-gray); text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease; }
+        .contact-card a:hover { color: var(--primary-black); }
 
         /* Message notification */
         .message-notification {
             position: fixed;
-            top: 100px;
-            right: 20px;
+            top: 100px; right: 20px;
             padding: 1rem 2rem;
             border-radius: 8px;
             color: white;
@@ -793,63 +730,24 @@
             transform: translateX(100%);
             transition: all 0.4s ease;
         }
-
-        .message-notification.show {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .message-notification.success {
-            background: #28a745;
-        }
-
-        .message-notification.error {
-            background: #dc3545;
-        }
+        .message-notification.show { opacity: 1; transform: translateX(0); }
+        .message-notification.success { background: #28a745; }
+        .message-notification.error   { background: #dc3545; }
 
         /* Footer */
-        footer {
-            background: var(--primary-black);
-            color: white;
-            text-align: center;
-            padding: 3rem 0;
-        }
-
-        footer p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
+        footer { background: var(--primary-black); color: white; text-align: center; padding: 3rem 0; }
+        footer p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
 
         /* Animations */
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to   { opacity: 1; transform: translateX(0); }
-        }
+        @keyframes fadeInLeft  { from { opacity:0; transform:translateX(-50px); } to { opacity:1; transform:translateX(0); } }
+        @keyframes fadeInRight { from { opacity:0; transform:translateX(50px);  } to { opacity:1; transform:translateX(0); } }
+        @keyframes fadeInUp    { from { opacity:0; transform:translateY(30px);  } to { opacity:1; transform:translateY(0); } }
 
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to   { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 1024px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-                text-align: center;
-            }
-            .skills-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero-content { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+            .skills-container { grid-template-columns: 1fr; gap: 3rem; }
+            .projects-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
@@ -881,6 +779,7 @@
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#github">GitHub</a></li>
                     <li><a href="#experience">Experience</a></li>
                     <li><a href="#recognition">Awards</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -898,7 +797,7 @@
                     <p class="greeting">Hello, I'm</p>
                     <h1>Szu Lun<br>(Zoey) Huang</h1>
                     <p class="subtitle">Data Scientist & Full-Stack Developer<br>Transforming data into intelligent solutions</p>
-                    
+
                     <div class="contact-info">
                         <a href="tel:(408) 802-4397" class="contact-item">(408) 802-4397</a>
                         <a href="#" class="contact-item" id="heroEmail"></a>
@@ -913,7 +812,6 @@
                 </div>
 
                 <div class="hero-visual">
-                    <!-- Photo Carousel -->
                     <div class="profile-container" id="photoCarousel">
                         <div class="carousel-slide active">
                             <img src="https://szulun.github.io/z1.png" alt="Zoey Huang" />
@@ -946,13 +844,11 @@
                 <h2 class="section-title">Technical Expertise</h2>
                 <p class="section-subtitle">A comprehensive skill set spanning data science, machine learning, and full-stack development</p>
             </div>
-
             <div class="skills-container">
                 <div class="skills-intro">
                     <h3>Core Competencies</h3>
                     <p>Leveraging cutting-edge technologies to build intelligent systems and data-driven solutions. My expertise spans from machine learning algorithms to scalable web applications.</p>
                 </div>
-
                 <div class="skills-grid">
                     <div class="skill-category">
                         <h4>Programming Languages</h4>
@@ -990,7 +886,6 @@
                 <h2 class="section-title">Education</h2>
                 <p class="section-subtitle">Academic foundation in data science, computer science, and business strategy</p>
             </div>
-
             <div class="education-timeline">
                 <div class="education-item">
                     <div class="education-header">
@@ -1004,7 +899,6 @@
                         <p>Coursework: Data Science Principles (Data 100), Data Structures (CS 61B), Probability & Risk Analysis (Ind Eng 172)</p>
                     </div>
                 </div>
-
                 <div class="education-item">
                     <div class="education-header">
                         <div>
@@ -1018,7 +912,6 @@
                         Dean's List: 2024 Winter/Spring/Fall, 2023 Summer/Fall</p>
                     </div>
                 </div>
-
                 <div class="education-item">
                     <div class="education-header">
                         <div>
@@ -1031,7 +924,6 @@
                         <p>Google-sponsored program with 10% acceptance rate – Scholarship Recipient</p>
                     </div>
                 </div>
-
                 <div class="education-item">
                     <div class="education-header">
                         <div>
@@ -1045,7 +937,6 @@
                         Specialized in digital commerce strategy and business analytics</p>
                     </div>
                 </div>
-
                 <div class="education-item">
                     <div class="education-header">
                         <div>
@@ -1069,13 +960,11 @@
                 <h2 class="section-title">Featured Projects</h2>
                 <p class="section-subtitle">Innovative solutions combining machine learning, full-stack development, and user experience design</p>
             </div>
-
             <div class="projects-grid">
 
-                <!-- LLM Context Management – NEW -->
                 <div class="project-card">
                     <div class="project-header">
-                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 2C7 2 5 4 5 6.5c0 .5.1 1 .3 1.5C3.9 8.8 3 10.3 3 12c0 2.2 1.4 4 3.4 4.7C6.9 18.6 8.6 20 10.5 20c.7 0 1.4-.2 2-.5.6.3 1.3.5 2 .5 1.9 0 3.6-1.4 4.1-3.3C20.6 16 22 14.2 22 12c0-1.7-.9-3.2-2.3-4 .2-.5.3-1 .3-1.5C20 4 18 2 15.5 2c-1 0-1.9.3-2.6.9-.4-.2-.8-.4-1.3-.6"/><path d="M12 6v6M9 9h6"/></svg></div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24"><path d="M9.5 2C7 2 5 4 5 6.5c0 .5.1 1 .3 1.5C3.9 8.8 3 10.3 3 12c0 2.2 1.4 4 3.4 4.7C6.9 18.6 8.6 20 10.5 20c.7 0 1.4-.2 2-.5.6.3 1.3.5 2 .5 1.9 0 3.6-1.4 4.1-3.3C20.6 16 22 14.2 22 12c0-1.7-.9-3.2-2.3-4 .2-.5.3-1 .3-1.5C20 4 18 2 15.5 2c-1 0-1.9.3-2.6.9-.4-.2-.8-.4-1.3-.6"/><path d="M12 6v6M9 9h6"/></svg></div>
                         <h3 class="project-title">LLM Context Management Suite</h3>
                         <p class="project-subtitle">Applied AI / Python · NAIRR Pilot Featured Tool</p>
                     </div>
@@ -1085,13 +974,12 @@
                             <li>Designed interactive IPyWidgets interface teaching token consumption, sliding window context management, and dynamic system prompting</li>
                             <li>Engineered local LLM inference pipeline using llama-cpp-python to deploy Llama 3.2 on JupyterHub in CPU-only environments</li>
                         </ul>
-                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
-                            <a href="https://github.com/ds-modules/Small_Models_SP26/tree/main/6-NoCodeNBs" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
+                        <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                            <a href="https://github.com/ds-modules/Small_Models_SP26/tree/main/6-NoCodeNBs" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Solar Inverter – NEW -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon" style="font-size:3rem;">☀️</div>
@@ -1103,13 +991,12 @@
                             <li>Built Random Forest & XGBoost models to forecast solar inverter output across two plants (R²=0.98+); used ETA modeling to improve Plant 2 accuracy by <strong>76%</strong></li>
                             <li>Detected underperforming inverters via anomaly detection; applied KMeans clustering to classify fault types, enabling targeted maintenance prioritization</li>
                         </ul>
-                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
-                            <a href="https://github.com/szulun/Solar-Power-Generation" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
+                        <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                            <a href="https://github.com/szulun/Solar-Power-Generation" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">GitHub</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Solar ELT Pipeline -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon" style="font-size:3rem;">🔧</div>
@@ -1124,15 +1011,15 @@
                             <li>Scheduled automated daily pipeline using Apache Airflow DAG (06:00 UTC) with retry logic and email alerting</li>
                             <li>Visualized peak generation windows (10:00–14:00), irradiation correlation, and hourly heatmaps using Matplotlib & Seaborn</li>
                         </ul>
-                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
-                            <a href="https://github.com/szulun/Solar-ELT-Pipeline" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
+                        <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                            <a href="https://github.com/szulun/Solar-ELT-Pipeline" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">GitHub</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header project-rewear">
-                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 001 .74H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 001-.74l.58-3.57a2 2 0 00-1.35-2.23z"/></svg></div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24"><path d="M20.38 3.46L16 2a4 4 0 01-8 0L3.62 3.46a2 2 0 00-1.34 2.23l.58 3.57a1 1 0 001 .74H6v10c0 1.1.9 2 2 2h8a2 2 0 002-2V10h2.15a1 1 0 001-.74l.58-3.57a2 2 0 00-1.35-2.23z"/></svg></div>
                         <h3 class="project-title">ReWearBaby</h3>
                         <p class="project-subtitle">Sustainable Baby Clothing Subscription | UC Berkeley Collider Cup</p>
                     </div>
@@ -1144,16 +1031,16 @@
                             <li>Built responsive website showcasing eco-friendly value proposition and customer interest capture system</li>
                             <li>Created comprehensive pitch materials securing early customer interest for 2026 pilot launch</li>
                         </ul>
-                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
-                            <a href="https://szuh326.github.io/ReWearBaby/" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">Visit Website</a>
-                            <a href="https://www.canva.com/design/DAG-R98Oqfg/XecIus1n-AYYa_ZO-xtu8Q/edit" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--medium-gray); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">Pitch Deck</a>
+                        <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                            <a href="https://szuh326.github.io/ReWearBaby/" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">Visit Website</a>
+                            <a href="https://www.canva.com/design/DAG-R98Oqfg/XecIus1n-AYYa_ZO-xtu8Q/edit" target="_blank" style="padding:0.6rem 1.2rem;background:var(--medium-gray);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">Pitch Deck</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header project-dna">
-                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></div>
                         <h3 class="project-title">DNA of Successful Startups – Published Research</h3>
                         <p class="project-subtitle">UC Berkeley ENGIN 183: How to Be a Futurist</p>
                     </div>
@@ -1164,8 +1051,8 @@
                             <li>Conducted entrepreneur interviews and case study research on emerging AI and Healthcare AI startups</li>
                             <li>Key insight: Technology advances fastest when it helps people understand themselves – the future belongs to tools that empower humans</li>
                         </ul>
-                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
-                            <a href="https://www.amazon.com/dp/B0GC42RHGW" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">View Publication</a>
+                        <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                            <a href="https://www.amazon.com/dp/B0GC42RHGW" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">View Publication</a>
                         </div>
                     </div>
                 </div>
@@ -1182,9 +1069,9 @@
                             <li>Developed custom save/load system using Java serialization for persistent game state management</li>
                             <li>Designed multiple themed biomes (Castle Ruins, Forest, Urban) with distinct visual aesthetics</li>
                         </ul>
-                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
-                            <a href="https://github.com/szulun/cs61b_final-project" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
-                            <a href="https://www.youtube.com/watch?v=fFOjuouYGvE&feature=youtu.be" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">View Demo</a>
+                        <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                            <a href="https://github.com/szulun/cs61b_final-project" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">GitHub</a>
+                            <a href="https://www.youtube.com/watch?v=fFOjuouYGvE&feature=youtu.be" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">View Demo</a>
                         </div>
                     </div>
                 </div>
@@ -1201,18 +1088,18 @@
                             <li>Implemented location-based features using Google Maps API to discover nearby plant shops</li>
                             <li>Created responsive web interface using Flutter; built backend services with Firebase Cloud Functions</li>
                         </ul>
-                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
-                            <a href="https://github.com/szulun/GreensWorld" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
-                            <a href="https://youtu.be/SUmRUsJVkGg" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--medium-gray); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">Gaia V1</a>
-                            <a href="https://youtu.be/mInwhxtxI9o" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--medium-gray); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">Gaia V2</a>
-                            <a href="https://www.youtube.com/watch?v=ehKdIO4QOlA" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--medium-gray); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">Community</a>
+                        <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                            <a href="https://github.com/szulun/GreensWorld" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">GitHub</a>
+                            <a href="https://youtu.be/SUmRUsJVkGg" target="_blank" style="padding:0.6rem 1.2rem;background:var(--medium-gray);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">Gaia V1</a>
+                            <a href="https://youtu.be/mInwhxtxI9o" target="_blank" style="padding:0.6rem 1.2rem;background:var(--medium-gray);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">Gaia V2</a>
+                            <a href="https://www.youtube.com/watch?v=ehKdIO4QOlA" target="_blank" style="padding:0.6rem 1.2rem;background:var(--medium-gray);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">Community</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header project-planb">
-                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div>
                         <h3 class="project-title">Plan B (MERN)</h3>
                         <p class="project-subtitle">Intelligent Trading Analytics Platform</p>
                     </div>
@@ -1223,16 +1110,16 @@
                             <li>Integrated Gmail API to streamline feedback submission and gather product improvement insights</li>
                             <li>Interactive dashboard for tracking portfolio performance and making informed decisions</li>
                         </ul>
-                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
-                            <a href="https://github.com/szulun/plan_b" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
-                            <a href="https://plan-b-frontend-nu.vercel.app/" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--medium-gray); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">Live Demo</a>
+                        <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                            <a href="https://github.com/szulun/plan_b" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">GitHub</a>
+                            <a href="https://plan-b-frontend-nu.vercel.app/" target="_blank" style="padding:0.6rem 1.2rem;background:var(--medium-gray);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">Live Demo</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card">
                     <div class="project-header project-ml">
-                        <div class="project-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                        <div class="project-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
                         <h3 class="project-title">Student Dropout Prediction</h3>
                         <p class="project-subtitle">Machine Learning Analytics</p>
                     </div>
@@ -1243,8 +1130,8 @@
                             <li>Engineered domain-specific features, improving ANN model's F1 score from 0.78 to 0.87</li>
                             <li>Created SHAP visualizations for model interpretability and stakeholder decision-making</li>
                         </ul>
-                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
-                            <a href="https://github.com/szulun/TechWise-Project2-ML" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
+                        <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                            <a href="https://github.com/szulun/TechWise-Project2-ML" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -1262,8 +1149,8 @@
                             <li>Enhanced user experience with dynamic audio features and card animations</li>
                             <li>Deployed on Render with MongoDB Atlas integration</li>
                         </ul>
-                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
-                            <a href="https://github.com/szulun/blackjack001" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
+                        <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                            <a href="https://github.com/szulun/blackjack001" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -1280,12 +1167,36 @@
                             <li>Composed and integrated custom game music and sound effects, increasing immersion by 80%</li>
                             <li>Created all visual assets, resulting in 90% positive feedback on aesthetics</li>
                         </ul>
-                        <div class="project-links" style="margin-top: 1.5rem; display: flex; gap: 0.8rem;">
-                            <a href="https://github.com/Unclepablo1024/byte_by_byte" target="_blank" style="padding: 0.6rem 1.2rem; background: var(--primary-black); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: 500; transition: all 0.3s ease;">GitHub</a>
+                        <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                            <a href="https://github.com/Unclepablo1024/byte_by_byte" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">GitHub</a>
                         </div>
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ GitHub Activity Section (correctly placed in <body>) -->
+    <section id="github">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">GitHub Activity</h2>
+                <p class="section-subtitle">
+                    Recent commits across my open-source projects —
+                    <a href="https://github.com/szulun" target="_blank" style="color:var(--primary-black);font-weight:500;text-decoration:underline;text-underline-offset:3px;">view full profile ↗</a>
+                </p>
+            </div>
+
+            <!-- Stats -->
+            <div id="gh-stats" style="display:flex;justify-content:center;gap:3rem;margin-bottom:2.5rem;flex-wrap:wrap;"></div>
+
+            <!-- Repo filter buttons -->
+            <div id="gh-filters" style="display:flex;gap:0.5rem;justify-content:center;margin-bottom:2rem;flex-wrap:wrap;"></div>
+
+            <!-- Commit timeline -->
+            <div id="gh-timeline" style="max-width:800px;margin:0 auto;">
+                <p style="text-align:center;color:var(--medium-gray);">Loading commits…</p>
             </div>
         </div>
     </section>
@@ -1297,10 +1208,8 @@
                 <h2 class="section-title">Professional Experience</h2>
                 <p class="section-subtitle">Driving technical innovation and business growth through strategic leadership and data-driven solutions</p>
             </div>
-
             <div class="experience-timeline">
 
-                <!-- NEW: Carbon Sustain Internship -->
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
@@ -1328,9 +1237,9 @@
                         <li>Managed operational logistics for large-scale events including Taiwan Tech Summit with 2,500+ participants; achieved 90%+ satisfaction via data-driven role matching</li>
                         <li>Develop volunteer engagement programs and organize team-building activities to strengthen community bonds</li>
                     </ul>
-                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-gray);">
-                        <a href="https://www.twnext.com/leadership-team-bio" target="_blank" style="color: var(--primary-black); text-decoration: none; font-weight: 500; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.3s ease;">
-                            Learn more about Taiwan Next Foundation <span style="font-size: 0.8rem;">→</span>
+                    <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border-gray);">
+                        <a href="https://www.twnext.com/leadership-team-bio" target="_blank" style="color:var(--primary-black);text-decoration:none;font-weight:500;font-size:0.9rem;display:inline-flex;align-items:center;gap:0.5rem;">
+                            Learn more about Taiwan Next Foundation <span style="font-size:0.8rem;">→</span>
                         </a>
                     </div>
                 </div>
@@ -1425,25 +1334,24 @@
                 <div class="contact-info-section">
                     <h3>Get in touch</h3>
                     <p>Whether you have a project in mind, want to discuss collaboration opportunities, or just want to say hello, I'm always open to connecting with fellow innovators and problem-solvers.</p>
-                    
                     <div class="contact-grid">
                         <div class="contact-card">
-                            <div class="contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
+                            <div class="contact-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
                             <h4>Email</h4>
                             <a href="#" id="contactEmail"></a>
                         </div>
                         <div class="contact-card">
-                            <div class="contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.87 9.67 19.79 19.79 0 01.82 5.05 2 2 0 012.8 2.87h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10.9a16 16 0 006.18 6.18l1.19-1.19a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.75 2.03z"/></svg></div>
+                            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.87 9.67 19.79 19.79 0 01.82 5.05 2 2 0 012.8 2.87h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10.9a16 16 0 006.18 6.18l1.19-1.19a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.75 2.03z"/></svg></div>
                             <h4>Phone</h4>
                             <a href="tel:(408) 802-4397">(408) 802-4397</a>
                         </div>
                         <div class="contact-card">
-                            <div class="contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7"/></svg></div>
+                            <div class="contact-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7"/></svg></div>
                             <h4>LinkedIn</h4>
                             <a href="https://linkedin.com/in/szulun-huang/" target="_blank">linkedin.com/in/szulun-huang/</a>
                         </div>
                         <div class="contact-card">
-                            <div class="contact-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div>
+                            <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div>
                             <h4>GitHub</h4>
                             <a href="https://github.com/szulun" target="_blank">github.com/szulun</a>
                         </div>
@@ -1460,24 +1368,21 @@
         </div>
     </footer>
 
+    <!-- ── Scripts ─────────────────────────────────────────────── -->
     <script>
-        // Build email addresses via JS to prevent spam bots
-        const u = 'szuh';
-        const d = 'berkeley.edu';
-        const email = u + '@' + d;
-
+        // Obfuscate email
+        const u = 'szuh', d = 'berkeley.edu', email = u + '@' + d;
         const heroEmail = document.getElementById('heroEmail');
         if (heroEmail) { heroEmail.href = 'mailto:' + email; heroEmail.textContent = email; }
-
         const contactEmail = document.getElementById('contactEmail');
         if (contactEmail) { contactEmail.href = 'mailto:' + email; contactEmail.textContent = email; }
     </script>
+
     <script>
-        // ── Photo Carousel ──────────────────────────────────────────
+        // Photo Carousel
         const slides = document.querySelectorAll('.carousel-slide');
         const dots   = document.querySelectorAll('.carousel-dot');
-        let current  = 0;
-        let timer;
+        let current = 0, timer;
 
         function goToSlide(index) {
             slides[current].classList.remove('active');
@@ -1487,94 +1392,174 @@
             dots[current].classList.add('active');
             resetTimer();
         }
-
-        function nextSlide() {
-            goToSlide((current + 1) % slides.length);
-        }
-
-        function resetTimer() {
-            clearInterval(timer);
-            timer = setInterval(nextSlide, 4000);
-        }
-
-        // Start auto-play
+        function nextSlide() { goToSlide((current + 1) % slides.length); }
+        function resetTimer() { clearInterval(timer); timer = setInterval(nextSlide, 4000); }
         timer = setInterval(nextSlide, 4000);
-
-        // Pause on hover
         document.getElementById('photoCarousel').addEventListener('mouseenter', () => clearInterval(timer));
         document.getElementById('photoCarousel').addEventListener('mouseleave', resetTimer);
-        // ────────────────────────────────────────────────────────────
+    </script>
 
-        // Initialize EmailJS
+    <script>
+        // EmailJS
         emailjs.init('JbImE9W3g26bpn9wg');
 
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // Navbar scroll effect
+        // Navbar scroll
         window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
         });
 
-        // Contact form submission
+        // Contact form
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const submitButton = document.querySelector('.submit-button');
-            const originalText = submitButton.textContent;
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
-
-            const serviceID  = 'service_yuk92ka';
-            const templateID = 'template_22xmc7u';
-            const formData = {
+            const btn = document.querySelector('.submit-button');
+            const orig = btn.textContent;
+            btn.disabled = true; btn.textContent = 'Sending...';
+            emailjs.send('service_yuk92ka', 'template_22xmc7u', {
                 from_name:  document.getElementById('from_name').value,
                 from_email: document.getElementById('from_email').value,
                 subject:    document.getElementById('subject').value,
                 message:    document.getElementById('message').value,
                 to_name:    'Zoey'
-            };
-
-            emailjs.send(serviceID, templateID, formData)
-                .then(() => {
-                    showNotification('Message sent successfully!', 'success');
-                    document.getElementById('contactForm').reset();
-                })
-                .catch((error) => {
-                    showNotification(`Failed to send: ${error.text || error.message || 'Unknown error'}`, 'error');
-                })
-                .finally(() => {
-                    submitButton.disabled = false;
-                    submitButton.textContent = originalText;
-                });
+            }).then(() => {
+                showNotification('Message sent successfully!', 'success');
+                document.getElementById('contactForm').reset();
+            }).catch(err => {
+                showNotification('Failed to send: ' + (err.text || err.message || 'Unknown error'), 'error');
+            }).finally(() => { btn.disabled = false; btn.textContent = orig; });
         });
 
-        function showNotification(message, type) {
-            const notification = document.getElementById('messageNotification');
-            notification.textContent = message;
-            notification.className = `message-notification ${type} show`;
-            setTimeout(() => notification.classList.remove('show'), 5000);
+        function showNotification(msg, type) {
+            const n = document.getElementById('messageNotification');
+            n.textContent = msg;
+            n.className = 'message-notification ' + type + ' show';
+            setTimeout(() => n.classList.remove('show'), 5000);
         }
 
-        // Scroll animations
-        const observer = new IntersectionObserver((entries) => {
-                  entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
+        // Scroll animation observer
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.style.animationPlayState = 'running'; });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-        document.querySelectorAll('section').forEach(section => observer.observe(section));
+        document.querySelectorAll('section').forEach(s => observer.observe(s));
     </script>
+
+    <!-- GitHub Activity Script -->
+    <script>
+    (async function githubActivity() {
+        const username = 'szulun';
+        const GH_BASE  = 'https://github.com/' + username;
+        let allCommits = [];
+
+        async function fetchRepos() {
+            const res = await fetch(`https://api.github.com/users/${username}/repos?sort=pushed&per_page=10`);
+            if (!res.ok) throw new Error('repos fetch failed');
+            return res.json();
+        }
+
+        async function fetchCommits(repo) {
+            try {
+                const res = await fetch(`https://api.github.com/repos/${username}/${repo}/commits?per_page=5`);
+                if (!res.ok) return [];
+                const data = await res.json();
+                return data.map(c => ({
+                    sha:     c.sha.slice(0, 7),
+                    message: c.commit.message.split('\n')[0],
+                    date:    c.commit.author.date,
+                    repo:    repo,
+                    url:     c.html_url,                          // link to the commit
+                    repoUrl: `${GH_BASE}/${repo}`                 // link to the repo
+                }));
+            } catch { return []; }
+        }
+
+        function groupByDate(commits) {
+            const groups = {};
+            commits.forEach(c => {
+                const key = new Date(c.date).toLocaleDateString('en-US', { year:'numeric', month:'short', day:'numeric' });
+                (groups[key] = groups[key] || []).push(c);
+            });
+            return groups;
+        }
+
+        function renderTimeline(commits) {
+            const el = document.getElementById('gh-timeline');
+            if (!commits.length) {
+                el.innerHTML = '<p style="text-align:center;color:var(--medium-gray);">No commits found.</p>';
+                return;
+            }
+            const groups = groupByDate(commits);
+            el.innerHTML = Object.entries(groups).map(([date, cs]) => `
+                <div style="margin-bottom:1.5rem;">
+                    <p style="font-size:0.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--medium-gray);border-bottom:1px solid var(--border-gray);padding-bottom:0.5rem;margin-bottom:0.6rem;">${date}</p>
+                    ${cs.map(c => `
+                        <a href="${c.url}" target="_blank" class="gh-commit-row">
+                            <div class="gh-dot"></div>
+                            <div style="flex:1;min-width:0;">
+                                <span class="gh-commit-msg">${c.message}</span>
+                                <div class="gh-commit-meta">
+                                    <a href="${c.repoUrl}" target="_blank" class="gh-repo-badge" onclick="event.stopPropagation()">${c.repo}</a>
+                                    <span>${c.sha}</span>
+                                </div>
+                            </div>
+                            <span style="font-size:0.75rem;color:var(--medium-gray);white-space:nowrap;margin-left:0.5rem;align-self:center;">↗</span>
+                        </a>`).join('')}
+                </div>`).join('');
+        }
+
+        function renderFilters(repos) {
+            const el = document.getElementById('gh-filters');
+            const all = ['all', ...repos];
+            all.forEach(r => {
+                const btn = document.createElement('button');
+                btn.textContent = r === 'all' ? 'All Repos' : r;
+                btn.className = 'gh-filter-btn' + (r === 'all' ? ' active' : '');
+                btn.onclick = () => {
+                    el.querySelectorAll('.gh-filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderTimeline(r === 'all' ? allCommits : allCommits.filter(c => c.repo === r));
+                };
+                el.appendChild(btn);
+            });
+        }
+
+        function renderStats(repos, commits) {
+            document.getElementById('gh-stats').innerHTML = `
+                <div style="text-align:center;">
+                    <a href="${GH_BASE}" target="_blank" style="text-decoration:none;color:inherit;">
+                        <div style="font-size:1.8rem;font-family:'Playfair Display',serif;font-weight:600;">${commits.length}+</div>
+                        <div style="font-size:0.8rem;color:var(--medium-gray);text-transform:uppercase;letter-spacing:1px;">Recent Commits</div>
+                    </a>
+                </div>
+                <div style="text-align:center;">
+                    <a href="${GH_BASE}?tab=repositories" target="_blank" style="text-decoration:none;color:inherit;">
+                        <div style="font-size:1.8rem;font-family:'Playfair Display',serif;font-weight:600;">${repos.length}</div>
+                        <div style="font-size:0.8rem;color:var(--medium-gray);text-transform:uppercase;letter-spacing:1px;">Repositories</div>
+                    </a>
+                </div>`;
+        }
+
+        try {
+            const repos     = await fetchRepos();
+            const repoNames = repos.map(r => r.name);
+            const arrays    = await Promise.all(repoNames.slice(0, 6).map(fetchCommits));
+            allCommits      = arrays.flat().sort((a, b) => new Date(b.date) - new Date(a.date));
+
+            renderStats(repos, allCommits);
+            renderFilters(repoNames.slice(0, 6));
+            renderTimeline(allCommits);
+        } catch {
+            document.getElementById('gh-timeline').innerHTML =
+                '<p style="text-align:center;color:var(--medium-gray);">Could not load commits. Please try again later.</p>';
+        }
+    })();
+    </script>
+
 </body>
 </html>
