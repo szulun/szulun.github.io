@@ -1041,24 +1041,23 @@
             </div>
             <div class="projects-grid">
 
-                <!-- ── MODIFIED: Evaluating Small Language Models ── -->
+                <!-- ── LLM Notebooks for AI Education ── -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon"><svg viewBox="0 0 24 24"><path d="M9.5 2C7 2 5 4 5 6.5c0 .5.1 1 .3 1.5C3.9 8.8 3 10.3 3 12c0 2.2 1.4 4 3.4 4.7C6.9 18.6 8.6 20 10.5 20c.7 0 1.4-.2 2-.5.6.3 1.3.5 2 .5 1.9 0 3.6-1.4 4.1-3.3C20.6 16 22 14.2 22 12c0-1.7-.9-3.2-2.3-4 .2-.5.3-1 .3-1.5C20 4 18 2 15.5 2c-1 0-1.9.3-2.6.9-.4-.2-.8-.4-1.3-.6"/><path d="M12 6v6M9 9h6"/></svg></div>
-                        <h3 class="project-title">Evaluating Small Language Models for AI Education</h3>
+                        <h3 class="project-title">LLM Notebooks for AI Education</h3>
                         <p class="project-subtitle">UC Berkeley CDSS 170 · Spring 2026 · Project Lead · NAIRR Pilot Featured Tool</p>
                     </div>
                     <div class="project-content">
                         <ul>
-                            <li>Led a 6-person research team to design, evaluate, and deploy open-source small language model (SLM) workflows for educational use in JupyterHub environments</li>
-                            <li>Developed evaluation pipelines to assess SLM performance across multiple exam datasets in JSON format, using <strong>Claude Haiku as an LLM judge</strong></li>
-                            <li>Engineered local LLM inference pipeline using llama-cpp-python to deploy Llama 3.2 / Qwen models in CPU-only environments, optimizing for low-resource classroom settings</li>
-                            <li>Built interactive data-driven notebooks (RAG + Vector Store, AI Writing Assistant) with IPyWidgets, enabling students to visualize token consumption and model behavior</li>
-                            <li>Conducted iterative model comparison experiments analyzing retrieval accuracy, generation quality, and hallucination rates across configurations</li>
-                            <li><strong>Research selected by NAIRR Pilot</strong> as a featured open-source educational tool; presented at the CDSS Data Discovery Symposium and demonstrated at Albany High School — recognized by instructor Sean Michael Morris (in collaboration with Eric Van Dusen, UC Berkeley CDSS)</li>
+                            <li><strong>Selected by NAIRR Pilot</strong> as a featured open-source educational tool integrated into UC Berkeley's Data Science curriculum; presented at the CDSS Data Discovery Symposium and demonstrated at Albany High School — recognized by instructor Sean Michael Morris (in collaboration with Eric Van Dusen)</li>
+                            <li>Built <strong>Personal Writing Assistant</strong> (v4.0): hands-on notebook covering prompt engineering, few-shot learning, and AI parameter control (temperature, frequency penalty); added accessibility fixes and cross-browser IPyWidgets rendering</li>
+                            <li>Built <strong>Hello Agent</strong> notebook: full ReAct-style agent loop (decide → act → observe → repeat) with 4 tools — DuckDuckGo search, file read/write, and shell execution with human-in-the-loop approval — running Llama 3.2 locally via llama.cpp</li>
+                            <li>Adapted <strong>Model Weights & Tokens</strong> notebook from instructor Eric's framework; added interactive UI to visualize tokenization in real-time and PCA-based embedding clustering using Qwen 1.5B</li>
+                            <li>Optimized <strong>Qwen SAT Test Taker</strong> notebook for stability; refactored open-ended AI responses into indexed, human-readable JSON output format</li>
                         </ul>
                         <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
-                            <a href="https://github.com/ds-modules/Small_Models_SP26/tree/main/6-NoCodeNBs" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">GitHub</a>
+                            <a href="https://github.com/ds-modules/SmallModels-SP26-development/tree/main/Zoey" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -1080,7 +1079,7 @@
                         </ul>
                         <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
                             <a href="https://szulun.github.io/bay-area-climate-dashboard" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">Live Dashboard</a>
-                            <a href="https://youtu.be/ZpPFS__LIJE" target="_blank" style="padding:0.6rem 1.2rem;background:var(--medium-gray);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">View Demo</a>
+                            <a href="https://youtu.be/ZpPFS__LIJE" target="_blank" style="padding:0.6rem 1.2rem;background:var(--medium-gray);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">Demo 影片</a>
                         </div>
                     </div>
                 </div>
@@ -1318,10 +1317,25 @@
                 <div class="experience-item">
                     <div class="experience-header">
                         <div>
+                            <h3 class="experience-title">Data & Operations Analyst</h3>
+                            <p class="experience-company">PacketMicro, Inc. · Santa Clara, CA</p>
+                        </div>
+                        <span class="experience-date">1/2026 – Present</span>
+                    </div>
+                    <ul class="experience-achievements">
+                        <li>Building a full-stack internal CRM system from scratch to replace QuickBooks Desktop + Method CRM; engineered Python ETL pipeline (PDF → CSV → JSON → PostgreSQL) ingesting 280+ invoices and quotes for customer order history lookup</li>
+                        <li>Architecting AI agent layer to classify incoming customer emails, assist with quote generation, and automate routine sales workflows — reducing manual processing time for the sales team</li>
+                        <li>Trained a customer-facing chatbot and designed onboarding SOP to streamline new sales rep ramp-up</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
                             <h3 class="experience-title">Data Engineering Intern</h3>
                             <p class="experience-company">Carbon Sustain @ Berkeley SkyDeck</p>
                         </div>
-                        <span class="experience-date">12/2024 – 2/2025</span>
+                        <span class="experience-date">12/2025 – 2/2026</span>
                     </div>
                     <ul class="experience-achievements">
                         <li>Maintained Django ORM-based data pipeline ingesting vehicle GPS data into PostgreSQL, supporting real-time fleet tracking and carbon emissions reporting across 100+ locations</li>
@@ -1394,8 +1408,8 @@
                 <div class="experience-item">
                     <ul class="experience-achievements">
                         <li><strong>Best Technical Demo</strong> — Cell Culture Hackathon @ Monomer Bio (03/2026)</li>
-                        <li><strong>NAIRR Pilot Featured Tool</strong> — SLM research selected as open-source educational tool, integrated into UC Berkeley's Data Science curriculum; presented at CDSS Data Discovery Symposium</li>
-                        <li><strong>Albany High School Showcase</strong> — SLM research demonstrated to high school students; recognized by instructor Sean Michael Morris (in collaboration with Eric Van Dusen, UC Berkeley CDSS)</li>
+                        <li><strong>NAIRR Pilot Featured Tool</strong> — LLM educational notebooks selected as open-source featured tool, integrated into UC Berkeley's Data Science curriculum; presented at CDSS Data Discovery Symposium</li>
+                        <li><strong>Albany High School Showcase</strong> — LLM notebooks demonstrated to high school students; recognized by instructor Sean Michael Morris (in collaboration with Eric Van Dusen, UC Berkeley CDSS)</li>
                         <li><strong>Berkeley Student Leadership Academy</strong> — Program Completion, AY 2025–26</li>
                         <li><strong>TechWise Fellowship</strong> — Google-funded, top 10% acceptance rate; 1st place in internal ML competition</li>
                         <li><strong>Dean's List</strong> — 5 consecutive quarters, Foothill De Anza College</li>
