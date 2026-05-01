@@ -1041,20 +1041,46 @@
             </div>
             <div class="projects-grid">
 
+                <!-- ── MODIFIED: Evaluating Small Language Models ── -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon"><svg viewBox="0 0 24 24"><path d="M9.5 2C7 2 5 4 5 6.5c0 .5.1 1 .3 1.5C3.9 8.8 3 10.3 3 12c0 2.2 1.4 4 3.4 4.7C6.9 18.6 8.6 20 10.5 20c.7 0 1.4-.2 2-.5.6.3 1.3.5 2 .5 1.9 0 3.6-1.4 4.1-3.3C20.6 16 22 14.2 22 12c0-1.7-.9-3.2-2.3-4 .2-.5.3-1 .3-1.5C20 4 18 2 15.5 2c-1 0-1.9.3-2.6.9-.4-.2-.8-.4-1.3-.6"/><path d="M12 6v6M9 9h6"/></svg></div>
-                        <h3 class="project-title">LLM Context Management Suite</h3>
-                        <p class="project-subtitle">Applied AI / Python · NAIRR Pilot Featured Tool</p>
+                        <h3 class="project-title">Evaluating Small Language Models for AI Education</h3>
+                        <p class="project-subtitle">UC Berkeley CDSS 170 · Spring 2026 · Project Lead · NAIRR Pilot Featured Tool</p>
                     </div>
                     <div class="project-content">
                         <ul>
-                            <li>Selected by the <strong>National AI Research Resource (NAIRR) Pilot</strong> as a featured open-source educational tool, integrated into UC Berkeley's Data Science curriculum</li>
-                            <li>Designed interactive IPyWidgets interface teaching token consumption, sliding window context management, and dynamic system prompting</li>
-                            <li>Engineered local LLM inference pipeline using llama-cpp-python to deploy Llama 3.2 on JupyterHub in CPU-only environments</li>
+                            <li>Led a 6-person research team to design, evaluate, and deploy open-source small language model (SLM) workflows for educational use in JupyterHub environments</li>
+                            <li>Developed evaluation pipelines to assess SLM performance across multiple exam datasets in JSON format, using <strong>Claude Haiku as an LLM judge</strong></li>
+                            <li>Engineered local LLM inference pipeline using llama-cpp-python to deploy Llama 3.2 / Qwen models in CPU-only environments, optimizing for low-resource classroom settings</li>
+                            <li>Built interactive data-driven notebooks (RAG + Vector Store, AI Writing Assistant) with IPyWidgets, enabling students to visualize token consumption and model behavior</li>
+                            <li>Conducted iterative model comparison experiments analyzing retrieval accuracy, generation quality, and hallucination rates across configurations</li>
+                            <li><strong>Research selected by NAIRR Pilot</strong> as a featured open-source educational tool; presented at the CDSS Data Discovery Symposium and demonstrated at Albany High School — recognized by instructor Sean Michael Morris (in collaboration with Eric Van Dusen, UC Berkeley CDSS)</li>
                         </ul>
                         <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
                             <a href="https://github.com/ds-modules/Small_Models_SP26/tree/main/6-NoCodeNBs" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ── NEW: Bay Area Climate & Equity Dashboard ── -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon" style="font-size:3rem;">🌍</div>
+                        <h3 class="project-title">Bay Area Climate & Equity Dashboard</h3>
+                        <p class="project-subtitle">Fung Fellowship × Act Now Bay Area · 6-person team · Lead Developer & Project Lead</p>
+                    </div>
+                    <div class="project-content">
+                        <ul>
+                            <li>Led 6-person team to design and deploy an interactive <strong>9-county climate dashboard</strong> (HTML/CSS/JS) covering the entire Bay Area</li>
+                            <li>Personally recruited and interviewed domain experts including <strong>Dr. Pouya Vahmani (LBNL)</strong>, <strong>Prof. Christopher M. Jones (UC Berkeley)</strong>, BAAQMD staff, and Berkeley City Councilmember Cecilia Lunaparra</li>
+                            <li>Built dual-mode UX — resident <em>Simple</em> mode and policymaker <em>Expert</em> mode — featuring county → ZIP drill-down, CalEnviroScreen EJ layer, 1990-baseline trends, and policy scenario sandbox</li>
+                            <li>Partnered with <strong>Act Now Bay Area</strong> (NGO) to validate data framing; conducted usability testing with policymakers and general users</li>
+                            <li>Deployed to GitHub Pages; validated through community stakeholder sessions</li>
+                        </ul>
+                        <div class="project-links" style="margin-top:1.5rem;display:flex;gap:0.8rem;">
+                            <a href="https://szulun.github.io/bay-area-climate-dashboard" target="_blank" style="padding:0.6rem 1.2rem;background:var(--primary-black);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">Live Dashboard</a>
+                            <a href="https://youtu.be/ZpPFS__LIJE" target="_blank" style="padding:0.6rem 1.2rem;background:var(--medium-gray);color:white;text-decoration:none;border-radius:4px;font-size:0.85rem;font-weight:500;">Demo 影片</a>
                         </div>
                     </div>
                 </div>
@@ -1264,7 +1290,6 @@
                 <p class="section-subtitle">Contribution history & recent commits</p>
             </div>
 
-            <!-- Contribution Heatmap (click to visit GitHub) -->
             <a href="https://github.com/szulun" target="_blank" class="gh-heatmap-wrap" title="View on GitHub">
                 <img src="https://ghchart.rshah.org/216e39/szulun" alt="Zoey's GitHub contribution chart" />
             </a>
@@ -1273,10 +1298,8 @@
                 <a href="https://github.com/szulun" target="_blank">github.com/szulun ↗</a>
             </p>
 
-            <!-- Stats -->
             <div class="gh-stats-row" id="gh-stats"></div>
 
-            <!-- Collapsible commit list by repo -->
             <div class="gh-accordion" id="gh-accordion">
                 <p style="text-align:center;color:var(--medium-gray);">Loading commits…</p>
             </div>
@@ -1371,7 +1394,8 @@
                 <div class="experience-item">
                     <ul class="experience-achievements">
                         <li><strong>Best Technical Demo</strong> — Cell Culture Hackathon @ Monomer Bio (03/2026)</li>
-                        <li><strong>NAIRR Pilot Featured Tool</strong> — LLM Context Management Suite selected as open-source educational tool, integrated into UC Berkeley's Data Science curriculum</li>
+                        <li><strong>NAIRR Pilot Featured Tool</strong> — SLM research selected as open-source educational tool, integrated into UC Berkeley's Data Science curriculum; presented at CDSS Data Discovery Symposium</li>
+                        <li><strong>Albany High School Showcase</strong> — SLM research demonstrated to high school students; recognized by instructor Sean Michael Morris (in collaboration with Eric Van Dusen, UC Berkeley CDSS)</li>
                         <li><strong>Berkeley Student Leadership Academy</strong> — Program Completion, AY 2025–26</li>
                         <li><strong>TechWise Fellowship</strong> — Google-funded, top 10% acceptance rate; 1st place in internal ML competition</li>
                         <li><strong>Dean's List</strong> — 5 consecutive quarters, Foothill De Anza College</li>
@@ -1581,7 +1605,6 @@
                 const group = document.createElement('div');
                 group.className = 'gh-repo-group';
 
-                // Header
                 const header = document.createElement('div');
                 header.className = 'gh-repo-header';
                 header.innerHTML = `
@@ -1592,7 +1615,6 @@
                     <span class="gh-chevron">▼</span>`;
                 header.addEventListener('click', () => group.classList.toggle('open'));
 
-                // Body
                 const body = document.createElement('div');
                 body.className = 'gh-commits-body';
                 body.innerHTML = commits.map(c => `
@@ -1627,7 +1649,6 @@
             renderStats(repos, totalCommits);
             renderAccordion(results);
 
-            // Open the first repo with commits by default
             const first = document.querySelector('.gh-repo-group');
             if (first) first.classList.add('open');
         } catch {
