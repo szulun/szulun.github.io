@@ -16,828 +16,164 @@
             --border-gray: #e9ecef;
             --accent-gray: #495057;
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.7;
-            color: var(--primary-black);
-            background: #ffffff;
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
-            padding: 1.5rem 0;
-            transition: all 0.4s ease;
-            border-bottom: 1px solid var(--border-gray);
-        }
-
-        nav.scrolled {
-            background: rgba(255, 255, 255, 0.98);
-            box-shadow: 0 1px 30px rgba(0, 0, 0, 0.08);
-            padding: 1rem 0;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary-black);
-            letter-spacing: -0.5px;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 3rem;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--accent-gray);
-            font-weight: 400;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            transition: all 0.3s ease;
-            position: relative;
-            text-transform: uppercase;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-black);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -8px;
-            left: 0;
-            background: var(--primary-black);
-            transition: width 0.4s ease;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background: linear-gradient(135deg, #ffffff 0%, var(--light-gray) 100%);
-        }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            width: 100%;
-        }
-
-        .hero-text {
-            animation: fadeInLeft 1.2s ease;
-        }
-
-        .hero-text .greeting {
-            font-size: 1.1rem;
-            color: var(--medium-gray);
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .hero-text h1 {
-            font-family: 'Ms Madi', cursive;
-            font-size: 5rem;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: var(--primary-black);
-            letter-spacing: 1px;
-            font-weight: 400;
-        }
-
-        .hero-text .subtitle {
-            font-size: 1.3rem;
-            color: var(--medium-gray);
-            margin-bottom: 2rem;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        .hero-text .contact-info {
-            margin-bottom: 2.5rem;
-        }
-
-        .contact-item {
-            display: block;
-            color: var(--accent-gray);
-            text-decoration: none;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        .contact-item:hover {
-            color: var(--primary-black);
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        .btn-primary, .btn-secondary {
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            border-radius: 0;
-            transition: all 0.4s ease;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            border: 2px solid var(--primary-black);
-        }
-
-        .btn-primary {
-            background: var(--primary-black);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            color: var(--primary-black);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: var(--primary-black);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary-black);
-            color: white;
-        }
-
-        .hero-visual {
-            text-align: center;
-            animation: fadeInRight 1.2s ease;
-        }
-
-        /* Photo Carousel */
-        .profile-container {
-            width: 400px;
-            height: 400px;
-            margin: 0 auto;
-            position: relative;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-
-        .carousel-slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 1s ease;
-        }
-
-        .carousel-slide.active {
-            opacity: 1;
-        }
-
-        .carousel-slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center top;
-            display: block;
-        }
-
-        .carousel-dots {
-            position: absolute;
-            bottom: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-            z-index: 10;
-        }
-
-        .carousel-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            cursor: pointer;
-            transition: background 0.3s ease;
-            border: none;
-            padding: 0;
-        }
-
-        .carousel-dot.active {
-            background: #fff;
-        }
-
-        /* Section Styling */
-        section {
-            padding: 6rem 0;
-        }
-
-        section:nth-child(even) {
-            background: var(--light-gray);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: var(--primary-black);
-            letter-spacing: -1px;
-        }
-
-        .section-subtitle {
-            font-size: 1.1rem;
-            color: var(--medium-gray);
-            max-width: 600px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-
-        /* Skills Section */
-        .skills-container {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .skills-intro h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-black);
-        }
-
-        .skills-intro p {
-            color: var(--medium-gray);
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--border-gray);
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .skill-category h4 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--primary-black);
-            border-bottom: 1px solid var(--border-gray);
-            padding-bottom: 0.5rem;
-        }
-
-        .skill-list {
-            color: var(--accent-gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Education Section */
-        .education-timeline {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .education-item {
-            background: white;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid var(--primary-black);
-            transition: transform 0.3s ease;
-        }
-
-        .education-item:hover {
-            transform: translateX(10px);
-        }
-
-        .education-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1rem;
-        }
-
-        .education-title {
-            font-size: 1.3rem;
-            color: var(--primary-black);
-            margin-bottom: 0.5rem;
-        }
-
-        .education-school {
-            color: var(--medium-gray);
-            font-size: 1rem;
-        }
-
-        .education-date {
-            color: var(--accent-gray);
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-
-        .education-details {
-            color: var(--accent-gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* Projects Section */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 3rem;
-        }
-
-        .project-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--border-gray);
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .project-header {
-            background: var(--primary-black);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-            min-height: 200px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .project-header::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1;
-        }
-
-        .project-header > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        .project-icon {
-            width: 3rem;
-            height: 3rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .project-icon svg {
-            width: 100%;
-            height: 100%;
-            stroke: white;
-            fill: none;
-            stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .project-dna      { background-image: url('https://szulun.github.io/dna.jpg'); background-size: cover; background-position: center; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: var(--primary-black); background: #ffffff; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 600; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); z-index: 1000; padding: 1.5rem 0; transition: all 0.4s ease; border-bottom: 1px solid var(--border-gray); }
+        nav.scrolled { background: rgba(255,255,255,0.98); box-shadow: 0 1px 30px rgba(0,0,0,0.08); padding: 1rem 0; }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--primary-black); letter-spacing: -0.5px; }
+        .nav-links { display: flex; list-style: none; gap: 3rem; }
+        .nav-links a { text-decoration: none; color: var(--accent-gray); font-weight: 400; font-size: 0.95rem; letter-spacing: 0.5px; transition: all 0.3s ease; position: relative; text-transform: uppercase; }
+        .nav-links a:hover { color: var(--primary-black); }
+        .nav-links a::after { content: ''; position: absolute; width: 0; height: 1px; bottom: -8px; left: 0; background: var(--primary-black); transition: width 0.4s ease; }
+        .nav-links a:hover::after { width: 100%; }
+        .hero { min-height: 100vh; display: flex; align-items: center; position: relative; background: linear-gradient(135deg, #ffffff 0%, var(--light-gray) 100%); }
+        .hero-content { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; width: 100%; }
+        .hero-text { animation: fadeInLeft 1.2s ease; }
+        .hero-text .greeting { font-size: 1.1rem; color: var(--medium-gray); margin-bottom: 1rem; letter-spacing: 1px; text-transform: uppercase; }
+        .hero-text h1 { font-family: 'Ms Madi', cursive; font-size: 5rem; line-height: 1.2; margin-bottom: 1.5rem; color: var(--primary-black); letter-spacing: 1px; font-weight: 400; }
+        .hero-text .subtitle { font-size: 1.3rem; color: var(--medium-gray); margin-bottom: 2rem; font-weight: 300; line-height: 1.6; }
+        .hero-text .contact-info { margin-bottom: 2.5rem; }
+        .contact-item { display: block; color: var(--accent-gray); text-decoration: none; margin-bottom: 0.5rem; font-size: 0.95rem; transition: color 0.3s ease; }
+        .contact-item:hover { color: var(--primary-black); }
+        .cta-buttons { display: flex; gap: 1.5rem; }
+        .btn-primary, .btn-secondary { padding: 0.8rem 2rem; text-decoration: none; border-radius: 0; transition: all 0.4s ease; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; font-size: 0.9rem; border: 2px solid var(--primary-black); }
+        .btn-primary { background: var(--primary-black); color: white; }
+        .btn-primary:hover { background: transparent; color: var(--primary-black); }
+        .btn-secondary { background: transparent; color: var(--primary-black); }
+        .btn-secondary:hover { background: var(--primary-black); color: white; }
+        .hero-visual { text-align: center; animation: fadeInRight 1.2s ease; }
+        .profile-container { width: 400px; height: 400px; margin: 0 auto; position: relative; border-radius: 8px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .carousel-slide { position: absolute; inset: 0; opacity: 0; transition: opacity 1s ease; }
+        .carousel-slide.active { opacity: 1; }
+        .carousel-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+        .carousel-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; }
+        .carousel-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer; transition: background 0.3s ease; border: none; padding: 0; }
+        .carousel-dot.active { background: #fff; }
+        section { padding: 6rem 0; }
+        section:nth-child(even) { background: var(--light-gray); }
+        .section-header { text-align: center; margin-bottom: 4rem; }
+        .section-title { font-size: 3rem; margin-bottom: 1rem; color: var(--primary-black); letter-spacing: -1px; }
+        .section-subtitle { font-size: 1.1rem; color: var(--medium-gray); max-width: 600px; margin: 0 auto; font-weight: 300; }
+        .skills-container { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+        .skills-intro h3 { font-size: 2rem; margin-bottom: 1.5rem; color: var(--primary-black); }
+        .skills-intro p { color: var(--medium-gray); font-size: 1.1rem; line-height: 1.7; }
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .skill-category { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid var(--border-gray); }
+        .skill-category:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.12); }
+        .skill-category h4 { font-size: 1.2rem; margin-bottom: 1rem; color: var(--primary-black); border-bottom: 1px solid var(--border-gray); padding-bottom: 0.5rem; }
+        .skill-list { color: var(--accent-gray); font-size: 0.95rem; line-height: 1.6; }
+        .education-timeline { max-width: 800px; margin: 0 auto; }
+        .education-item { background: white; padding: 2.5rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-left: 4px solid var(--primary-black); transition: transform 0.3s ease; }
+        .education-item:hover { transform: translateX(10px); }
+        .education-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; }
+        .education-title { font-size: 1.3rem; color: var(--primary-black); margin-bottom: 0.5rem; }
+        .education-school { color: var(--medium-gray); font-size: 1rem; }
+        .education-date { color: var(--accent-gray); font-size: 0.9rem; white-space: nowrap; }
+        .education-details { color: var(--accent-gray); font-size: 0.95rem; line-height: 1.6; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 3rem; }
+        .project-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 8px 30px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid var(--border-gray); }
+        .project-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.15); }
+        .project-header { background: var(--primary-black); color: white; padding: 2rem; text-align: center; position: relative; min-height: 200px; background-size: cover; background-position: center; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .project-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 1; }
+        .project-header > * { position: relative; z-index: 2; }
+        .project-icon { width: 3rem; height: 3rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: center; }
+        .project-icon svg { width: 100%; height: 100%; stroke: white; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+        .project-dna { background-image: url('https://szulun.github.io/dna.jpg'); background-size: cover; background-position: center; }
         .project-friendtale { background-image: url('https://szulun.github.io/friendtale.png'); background-size: cover; background-position: center; }
-        .project-greens   { background-image: url('https://szulun.github.io/GreensWrld-askgaia.png'); background-size: cover; background-position: center; }
-        .project-planb    { background-image: url('https://szulun.github.io/plan B Dashboard.png'); background-size: cover; background-position: center; }
-        .project-ml       { background-image: url('https://szulun.github.io/ML.png'); background-size: cover; background-position: center; }
-        .project-rewear   { background-image: url('https://szulun.github.io/rewear.png'); background-size: cover; background-position: center; }
-
-        .project-title    { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .project-greens { background-image: url('https://szulun.github.io/GreensWrld-askgaia.png'); background-size: cover; background-position: center; }
+        .project-planb { background-image: url('https://szulun.github.io/plan B Dashboard.png'); background-size: cover; background-position: center; }
+        .project-ml { background-image: url('https://szulun.github.io/ML.png'); background-size: cover; background-position: center; }
+        .project-rewear { background-image: url('https://szulun.github.io/rewear.png'); background-size: cover; background-position: center; }
+        .project-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
         .project-subtitle { color: rgba(255,255,255,0.8); font-size: 0.9rem; }
-
         .project-content { padding: 2rem; }
         .project-content ul { list-style: none; padding: 0; }
-        .project-content li {
-            margin-bottom: 0.8rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--accent-gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        .project-content li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--primary-black);
-            font-weight: bold;
-        }
-
-        /* Experience Section */
+        .project-content li { margin-bottom: 0.8rem; padding-left: 1.5rem; position: relative; color: var(--accent-gray); font-size: 0.95rem; line-height: 1.6; }
+        .project-content li::before { content: '•'; position: absolute; left: 0; color: var(--primary-black); font-weight: bold; }
         .experience-timeline { max-width: 900px; margin: 0 auto; }
-
-        .experience-item {
-            background: white;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            border-left: 4px solid var(--primary-black);
-            transition: transform 0.3s ease;
-        }
-
+        .experience-item { background: white; padding: 2.5rem; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-left: 4px solid var(--primary-black); transition: transform 0.3s ease; }
         .experience-item:hover { transform: translateX(10px); }
-
-        .experience-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: start;
-            margin-bottom: 1.5rem;
-        }
-
+        .experience-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 1.5rem; }
         .experience-title { font-size: 1.4rem; color: var(--primary-black); margin-bottom: 0.5rem; }
         .experience-company { color: var(--medium-gray); font-size: 1rem; }
         .experience-date { color: var(--accent-gray); font-size: 0.9rem; white-space: nowrap; }
-
         .experience-achievements { list-style: none; padding: 0; }
-        .experience-achievements li {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-            color: var(--accent-gray);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-        .experience-achievements li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: var(--primary-black);
-            font-size: 0.8rem;
-        }
-
-        /* GitHub Activity Section */
-        .gh-heatmap-wrap {
-            display: block;
-            max-width: 900px;
-            margin: 0 auto 2.5rem;
-            border: 1px solid var(--border-gray);
-            border-radius: 8px;
-            overflow: hidden;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-        .gh-heatmap-wrap:hover {
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            transform: translateY(-3px);
-        }
-        .gh-heatmap-wrap img {
-            width: 100%;
-            display: block;
-            padding: 1.5rem;
-            background: white;
-        }
-        .gh-heatmap-caption {
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--medium-gray);
-            margin-bottom: 2.5rem;
-            letter-spacing: 0.3px;
-        }
-        .gh-heatmap-caption a {
-            color: var(--primary-black);
-            font-weight: 500;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        /* Accordion commit list */
-        .gh-accordion {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .gh-repo-group {
-            border: 1px solid var(--border-gray);
-            border-radius: 8px;
-            margin-bottom: 0.8rem;
-            overflow: hidden;
-            background: white;
-        }
-        .gh-repo-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 1.5rem;
-            cursor: pointer;
-            user-select: none;
-            transition: background 0.2s;
-        }
+        .experience-achievements li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; color: var(--accent-gray); font-size: 0.95rem; line-height: 1.6; }
+        .experience-achievements li::before { content: '▶'; position: absolute; left: 0; color: var(--primary-black); font-size: 0.8rem; }
+        .gh-heatmap-wrap { display: block; max-width: 900px; margin: 0 auto 2.5rem; border: 1px solid var(--border-gray); border-radius: 8px; overflow: hidden; transition: box-shadow 0.3s ease, transform 0.3s ease; }
+        .gh-heatmap-wrap:hover { box-shadow: 0 8px 30px rgba(0,0,0,0.12); transform: translateY(-3px); }
+        .gh-heatmap-wrap img { width: 100%; display: block; padding: 1.5rem; background: white; }
+        .gh-heatmap-caption { text-align: center; font-size: 0.8rem; color: var(--medium-gray); margin-bottom: 2.5rem; letter-spacing: 0.3px; }
+        .gh-heatmap-caption a { color: var(--primary-black); font-weight: 500; text-decoration: underline; text-underline-offset: 3px; }
+        .gh-accordion { max-width: 800px; margin: 0 auto; }
+        .gh-repo-group { border: 1px solid var(--border-gray); border-radius: 8px; margin-bottom: 0.8rem; overflow: hidden; background: white; }
+        .gh-repo-header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; cursor: pointer; user-select: none; transition: background 0.2s; }
         .gh-repo-header:hover { background: var(--light-gray); }
-        .gh-repo-header-left {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-        .gh-repo-name {
-            font-weight: 500;
-            font-size: 0.95rem;
-            color: var(--primary-black);
-            text-decoration: none;
-        }
+        .gh-repo-header-left { display: flex; align-items: center; gap: 0.8rem; }
+        .gh-repo-name { font-weight: 500; font-size: 0.95rem; color: var(--primary-black); text-decoration: none; }
         .gh-repo-name:hover { text-decoration: underline; }
-        .gh-commit-count {
-            font-size: 0.78rem;
-            color: var(--medium-gray);
-            background: var(--light-gray);
-            border: 1px solid var(--border-gray);
-            border-radius: 20px;
-            padding: 0.1rem 0.6rem;
-        }
-        .gh-chevron {
-            font-size: 0.75rem;
-            color: var(--medium-gray);
-            transition: transform 0.3s ease;
-        }
+        .gh-commit-count { font-size: 0.78rem; color: var(--medium-gray); background: var(--light-gray); border: 1px solid var(--border-gray); border-radius: 20px; padding: 0.1rem 0.6rem; }
+        .gh-chevron { font-size: 0.75rem; color: var(--medium-gray); transition: transform 0.3s ease; }
         .gh-repo-group.open .gh-chevron { transform: rotate(180deg); }
-        .gh-commits-body {
-            display: none;
-            border-top: 1px solid var(--border-gray);
-        }
+        .gh-commits-body { display: none; border-top: 1px solid var(--border-gray); }
         .gh-repo-group.open .gh-commits-body { display: block; }
-        .gh-commit-row {
-            display: flex;
-            gap: 0.8rem;
-            padding: 0.75rem 1.5rem;
-            border-bottom: 1px solid var(--border-gray);
-            align-items: flex-start;
-            text-decoration: none;
-            transition: background 0.2s;
-        }
+        .gh-commit-row { display: flex; gap: 0.8rem; padding: 0.75rem 1.5rem; border-bottom: 1px solid var(--border-gray); align-items: flex-start; text-decoration: none; transition: background 0.2s; }
         .gh-commit-row:last-child { border-bottom: none; }
         .gh-commit-row:hover { background: var(--light-gray); }
-        .gh-dot {
-            width: 7px; height: 7px;
-            border-radius: 50%;
-            background: var(--primary-black);
-            margin-top: 6px;
-            flex-shrink: 0;
-        }
-        .gh-commit-msg {
-            font-size: 0.88rem;
-            color: var(--primary-black);
-            display: block;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            margin-bottom: 0.15rem;
-        }
-        .gh-commit-meta {
-            font-size: 0.75rem;
-            color: var(--medium-gray);
-            display: flex;
-            gap: 0.8rem;
-        }
-        .gh-stats-row {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
+        .gh-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--primary-black); margin-top: 6px; flex-shrink: 0; }
+        .gh-commit-msg { font-size: 0.88rem; color: var(--primary-black); display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; margin-bottom: 0.15rem; }
+        .gh-commit-meta { font-size: 0.75rem; color: var(--medium-gray); display: flex; gap: 0.8rem; }
+        .gh-stats-row { display: flex; justify-content: center; gap: 3rem; margin-bottom: 2rem; flex-wrap: wrap; }
         .gh-stat-item { text-align: center; }
-        .gh-stat-num {
-            font-size: 1.8rem;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            color: var(--primary-black);
-            display: block;
-            text-decoration: none;
-        }
+        .gh-stat-num { font-size: 1.8rem; font-family: 'Playfair Display', serif; font-weight: 600; color: var(--primary-black); display: block; text-decoration: none; }
         .gh-stat-num:hover { text-decoration: underline; }
-        .gh-stat-label {
-            font-size: 0.8rem;
-            color: var(--medium-gray);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* Contact Form */
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: start;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid var(--border-gray);
-        }
-
+        .gh-stat-label { font-size: 0.8rem; color: var(--medium-gray); text-transform: uppercase; letter-spacing: 1px; }
+        .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        .contact-form { background: white; padding: 3rem; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 1px solid var(--border-gray); }
         .contact-form h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary-black); }
-
         .form-group { margin-bottom: 1.5rem; }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--accent-gray);
-            font-weight: 500;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid var(--border-gray);
-            border-radius: 4px;
-            font-size: 1rem;
-            color: var(--primary-black);
-            transition: border-color 0.3s ease;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus { outline: none; border-color: var(--primary-black); }
+        .form-group label { display: block; margin-bottom: 0.5rem; color: var(--accent-gray); font-weight: 500; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 0.8rem; border: 2px solid var(--border-gray); border-radius: 4px; font-size: 1rem; color: var(--primary-black); transition: border-color 0.3s ease; font-family: 'Inter', sans-serif; }
+        .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--primary-black); }
         .form-group textarea { resize: vertical; min-height: 120px; }
-
-        .submit-button {
-            width: 100%;
-            padding: 1rem 2rem;
-            background: var(--primary-black);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
+        .submit-button { width: 100%; padding: 1rem 2rem; background: var(--primary-black); color: white; border: none; border-radius: 4px; font-size: 1rem; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; }
         .submit-button:hover { background: var(--secondary-black); transform: translateY(-2px); }
         .submit-button:disabled { background: var(--medium-gray); cursor: not-allowed; transform: none; }
-
         .contact-info-section { padding: 2rem 0; }
         .contact-info-section h3 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--primary-black); }
         .contact-info-section p { color: var(--medium-gray); margin-bottom: 2rem; line-height: 1.7; }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-            text-align: center;
-            transition: transform 0.3s ease;
-            border: 1px solid var(--border-gray);
-        }
-
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 3rem; }
+        .contact-card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 8px 30px rgba(0,0,0,0.08); text-align: center; transition: transform 0.3s ease; border: 1px solid var(--border-gray); }
         .contact-card:hover { transform: translateY(-5px); }
-
-        .contact-icon {
-            width: 2rem; height: 2rem;
-            margin: 0 auto 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .contact-icon svg {
-            width: 100%; height: 100%;
-            stroke: var(--primary-black);
-            fill: none;
-            stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
+        .contact-icon { width: 2rem; height: 2rem; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; }
+        .contact-icon svg { width: 100%; height: 100%; stroke: var(--primary-black); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
         .contact-card h4 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--primary-black); }
         .contact-card a { color: var(--medium-gray); text-decoration: none; font-size: 0.9rem; transition: color 0.3s ease; }
         .contact-card a:hover { color: var(--primary-black); }
-
-        /* Message notification */
-        .message-notification {
-            position: fixed;
-            top: 100px; right: 20px;
-            padding: 1rem 2rem;
-            border-radius: 8px;
-            color: white;
-            font-weight: 500;
-            z-index: 1001;
-            opacity: 0;
-            transform: translateX(100%);
-            transition: all 0.4s ease;
-        }
+        .message-notification { position: fixed; top: 100px; right: 20px; padding: 1rem 2rem; border-radius: 8px; color: white; font-weight: 500; z-index: 1001; opacity: 0; transform: translateX(100%); transition: all 0.4s ease; }
         .message-notification.show { opacity: 1; transform: translateX(0); }
         .message-notification.success { background: #28a745; }
-        .message-notification.error   { background: #dc3545; }
-
-        /* Footer */
+        .message-notification.error { background: #dc3545; }
         footer { background: var(--primary-black); color: white; text-align: center; padding: 3rem 0; }
         footer p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
-
-        /* Animations */
-        @keyframes fadeInLeft  { from { opacity:0; transform:translateX(-50px); } to { opacity:1; transform:translateX(0); } }
-        @keyframes fadeInRight { from { opacity:0; transform:translateX(50px);  } to { opacity:1; transform:translateX(0); } }
-        @keyframes fadeInUp    { from { opacity:0; transform:translateY(30px);  } to { opacity:1; transform:translateY(0); } }
-
-        /* Responsive */
+        @keyframes fadeInLeft { from { opacity:0; transform:translateX(-50px); } to { opacity:1; transform:translateX(0); } }
+        @keyframes fadeInRight { from { opacity:0; transform:translateX(50px); } to { opacity:1; transform:translateX(0); } }
+        @keyframes fadeInUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
         @media (max-width: 1024px) {
             .hero-content { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
             .skills-container { grid-template-columns: 1fr; gap: 3rem; }
             .projects-grid { grid-template-columns: 1fr; }
         }
-
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero-text h1 { font-size: 3.5rem; letter-spacing: 0.5px; }
             .section-title { font-size: 2rem; }
             .profile-container { width: 300px; height: 300px; }
-            .experience-header,
-            .education-header { flex-direction: column; align-items: start; }
-            .experience-date,
-            .education-date { margin-top: 0.5rem; }
+            .experience-header, .education-header { flex-direction: column; align-items: start; }
+            .experience-date, .education-date { margin-top: 0.5rem; }
             .logo { font-size: 1.8rem; }
             .contact-container { grid-template-columns: 1fr; gap: 3rem; }
             .contact-form { padding: 2rem; }
@@ -845,10 +181,8 @@
     </style>
 </head>
 <body>
-    <!-- Message notification -->
     <div id="messageNotification" class="message-notification"></div>
 
-    <!-- Navigation -->
     <nav id="navbar">
         <div class="container">
             <div class="nav-container">
@@ -868,7 +202,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
@@ -876,34 +209,23 @@
                     <p class="greeting">Hello, I'm</p>
                     <h1>Szu Lun<br>(Zoey) Huang</h1>
                     <p class="subtitle">Data Scientist & Full-Stack Developer<br>Transforming data into intelligent solutions</p>
-
                     <div class="contact-info">
                         <a href="tel:(408) 802-4397" class="contact-item">(408) 802-4397</a>
                         <a href="#" class="contact-item" id="heroEmail"></a>
                         <a href="https://linkedin.com/in/szulun-huang/" class="contact-item" target="_blank">linkedin.com/in/szulun-huang/</a>
                         <a href="https://github.com/szulun" class="contact-item" target="_blank">github.com/szulun</a>
                     </div>
-
                     <div class="cta-buttons">
                         <a href="#projects" class="btn-primary">View Projects</a>
                         <a href="#contact" class="btn-secondary">Get In Touch</a>
                     </div>
                 </div>
-
                 <div class="hero-visual">
                     <div class="profile-container" id="photoCarousel">
-                        <div class="carousel-slide active">
-                            <img src="https://szulun.github.io/z1.png" alt="Zoey Huang" />
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="https://szulun.github.io/z2.jpg" alt="Zoey Huang" />
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="https://szulun.github.io/TN.jpg" alt="Zoey Huang" />
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="https://szulun.github.io/tek.jpg" alt="Zoey Huang" />
-                        </div>
+                        <div class="carousel-slide active"><img src="https://szulun.github.io/z1.png" alt="Zoey Huang" /></div>
+                        <div class="carousel-slide"><img src="https://szulun.github.io/z2.jpg" alt="Zoey Huang" /></div>
+                        <div class="carousel-slide"><img src="https://szulun.github.io/TN.jpg" alt="Zoey Huang" /></div>
+                        <div class="carousel-slide"><img src="https://szulun.github.io/tek.jpg" alt="Zoey Huang" /></div>
                         <div class="carousel-dots">
                             <button class="carousel-dot active" onclick="goToSlide(0)"></button>
                             <button class="carousel-dot" onclick="goToSlide(1)"></button>
@@ -916,7 +238,6 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills">
         <div class="container">
             <div class="section-header">
@@ -929,36 +250,17 @@
                     <p>Leveraging cutting-edge technologies to build intelligent systems and data-driven solutions. My expertise spans from machine learning algorithms to scalable web applications.</p>
                 </div>
                 <div class="skills-grid">
-                    <div class="skill-category">
-                        <h4>Programming Languages</h4>
-                        <p class="skill-list">Python, SQL, PySpark, C++, Java, JavaScript, HTML, CSS</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Web & Mobile Technologies</h4>
-                        <p class="skill-list">React, Django, Node.js, Express.js, RESTful APIs, MERN Stack, Flutter</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Data Science & ML</h4>
-                        <p class="skill-list">Scikit-learn, XGBoost, TensorFlow, Pandas, NumPy, SHAP, Feature Engineering, Time Series Forecasting</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>AI & Cloud Services</h4>
-                        <p class="skill-list">Local AI Integration (Llama), Google Gemini AI, Firebase, Google Maps API, Airflow</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Databases & Tools</h4>
-                        <p class="skill-list">PostgreSQL, MongoDB, Oracle Database, Git, Linux, Tableau, Heroku, Render, Google Sheets API</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Specialized</h4>
-                        <p class="skill-list">ETL Pipelines, Data Visualization, PyGame, Game Development</p>
-                    </div>
+                    <div class="skill-category"><h4>Programming Languages</h4><p class="skill-list">Python, SQL, PySpark, C++, Java, JavaScript, HTML, CSS</p></div>
+                    <div class="skill-category"><h4>Web & Mobile Technologies</h4><p class="skill-list">React, Django, Node.js, Express.js, RESTful APIs, MERN Stack, Flutter</p></div>
+                    <div class="skill-category"><h4>Data Science & ML</h4><p class="skill-list">Scikit-learn, XGBoost, TensorFlow, Pandas, NumPy, SHAP, Feature Engineering, Time Series Forecasting</p></div>
+                    <div class="skill-category"><h4>AI & Cloud Services</h4><p class="skill-list">Local AI Integration (Llama), Google Gemini AI, Firebase, Google Maps API, Airflow</p></div>
+                    <div class="skill-category"><h4>Databases & Tools</h4><p class="skill-list">PostgreSQL, MongoDB, Oracle Database, Git, Linux, Tableau, Heroku, Render, Google Sheets API</p></div>
+                    <div class="skill-category"><h4>Specialized</h4><p class="skill-list">ETL Pipelines, Data Visualization, PyGame, Game Development</p></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section -->
     <section id="education">
         <div class="container">
             <div class="section-header">
@@ -966,18 +268,22 @@
                 <p class="section-subtitle">Academic foundation in data science, computer science, and business strategy</p>
             </div>
             <div class="education-timeline">
+
+                <!-- ✅ UPDATED: Added DS Honors Program + Thesis -->
                 <div class="education-item">
                     <div class="education-header">
                         <div>
-                            <h3 class="education-title">Bachelor of Data Science</h3>
+                            <h3 class="education-title">Bachelor of Data Science — Data Science Honors Program</h3>
                             <p class="education-school">University of California, Berkeley</p>
                         </div>
                         <span class="education-date">8/2025 – 6/2027 (Expected)</span>
                     </div>
                     <div class="education-details">
                         <p>Coursework: Data Science Principles (Data 100), Data Structures (CS 61B), Probability & Risk Analysis (Ind Eng 172)</p>
+                        <p style="margin-top:0.8rem;"><strong>Honors Thesis:</strong> <em>Opening the Black Box: A Teachable Notebook Sequence for Small Language Models</em> — advised by Eric Van Dusen (UC Berkeley CDSS). Designing interactive Jupyter notebooks that teach students to manipulate SLM generation parameters, system prompts, and context management; piloted with 26 high school students (Spring 2026). Submitted to SIGCSE 2027.</p>
                     </div>
                 </div>
+
                 <div class="education-item">
                     <div class="education-header">
                         <div>
@@ -987,10 +293,10 @@
                         <span class="education-date">9/2023 – 8/2025</span>
                     </div>
                     <div class="education-details">
-                        <p>2024 Academic Achievement Scholarship recipient<br>
-                        Dean's List: 2024 Winter/Spring/Fall, 2023 Summer/Fall</p>
+                        <p>2024 Academic Achievement Scholarship recipient<br>Dean's List: 2024 Winter/Spring/Fall, 2023 Summer/Fall</p>
                     </div>
                 </div>
+
                 <div class="education-item">
                     <div class="education-header">
                         <div>
@@ -1003,6 +309,7 @@
                         <p>Google-sponsored program with 10% acceptance rate – Scholarship Recipient</p>
                     </div>
                 </div>
+
                 <div class="education-item">
                     <div class="education-header">
                         <div>
@@ -1012,10 +319,10 @@
                         <span class="education-date">Completed</span>
                     </div>
                     <div class="education-details">
-                        <p>EMBA Teaching Assistant & Vice Class Representative<br>
-                        Specialized in digital commerce strategy and business analytics</p>
+                        <p>EMBA Teaching Assistant & Vice Class Representative<br>Specialized in digital commerce strategy and business analytics</p>
                     </div>
                 </div>
+
                 <div class="education-item">
                     <div class="education-header">
                         <div>
@@ -1028,11 +335,11 @@
                         <p>Scholarship Recipient</p>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <div class="section-header">
@@ -1041,7 +348,6 @@
             </div>
             <div class="projects-grid">
 
-                <!-- ── LLM Notebooks for AI Education ── -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon"><svg viewBox="0 0 24 24"><path d="M9.5 2C7 2 5 4 5 6.5c0 .5.1 1 .3 1.5C3.9 8.8 3 10.3 3 12c0 2.2 1.4 4 3.4 4.7C6.9 18.6 8.6 20 10.5 20c.7 0 1.4-.2 2-.5.6.3 1.3.5 2 .5 1.9 0 3.6-1.4 4.1-3.3C20.6 16 22 14.2 22 12c0-1.7-.9-3.2-2.3-4 .2-.5.3-1 .3-1.5C20 4 18 2 15.5 2c-1 0-1.9.3-2.6.9-.4-.2-.8-.4-1.3-.6"/><path d="M12 6v6M9 9h6"/></svg></div>
@@ -1062,7 +368,6 @@
                     </div>
                 </div>
 
-                <!-- ── NEW: Bay Area Climate & Equity Dashboard ── -->
                 <div class="project-card">
                     <div class="project-header">
                         <div class="project-icon" style="font-size:3rem;">🌍</div>
@@ -1281,31 +586,23 @@
         </div>
     </section>
 
-    <!-- GitHub Activity Section -->
     <section id="github">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">GitHub Activity</h2>
                 <p class="section-subtitle">Contribution history & recent commits</p>
             </div>
-
             <a href="https://github.com/szulun" target="_blank" class="gh-heatmap-wrap" title="View on GitHub">
                 <img src="https://ghchart.rshah.org/216e39/szulun" alt="Zoey's GitHub contribution chart" />
             </a>
-            <p class="gh-heatmap-caption">
-                Click the chart to visit
-                <a href="https://github.com/szulun" target="_blank">github.com/szulun ↗</a>
-            </p>
-
+            <p class="gh-heatmap-caption">Click the chart to visit <a href="https://github.com/szulun" target="_blank">github.com/szulun ↗</a></p>
             <div class="gh-stats-row" id="gh-stats"></div>
-
             <div class="gh-accordion" id="gh-accordion">
                 <p style="text-align:center;color:var(--medium-gray);">Loading commits…</p>
             </div>
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience">
         <div class="container">
             <div class="section-header">
@@ -1314,41 +611,47 @@
             </div>
             <div class="experience-timeline">
 
+                <!-- ✅ UPDATED: PacketMicro new bullets -->
                 <div class="experience-item">
                     <div class="experience-header">
-                        <div>
-                            <h3 class="experience-title">Data & Operations Analyst</h3>
-                            <p class="experience-company">PacketMicro, Inc. · Santa Clara, CA</p>
-                        </div>
+                        <div><h3 class="experience-title">Data & Operations Analyst</h3><p class="experience-company">PacketMicro, Inc. · Santa Clara, CA</p></div>
                         <span class="experience-date">1/2026 – Present</span>
                     </div>
                     <ul class="experience-achievements">
-                        <li>Building a full-stack internal CRM system from scratch to replace QuickBooks Desktop + Method CRM; engineered Python ETL pipeline (PDF → CSV → JSON → PostgreSQL) ingesting 280+ invoices and quotes for customer order history lookup</li>
-                        <li>Architecting AI agent layer to classify incoming customer emails, assist with quote generation, and automate routine sales workflows — reducing manual processing time for the sales team</li>
-                        <li>Trained a customer-facing chatbot and designed onboarding SOP to streamline new sales rep ramp-up</li>
+                        <li><strong>Full-Stack CRM & Operations Tooling:</strong> Proactively built a QuickBooks-backed internal CRM stack from scratch to automate quotes, invoicing, and customer follow-ups; processed 900+ invoices and quotes, reducing leadership lookup time by ~70%</li>
+                        <li><strong>Data Verification & Shipping Checker:</strong> Engineered an automated shipping-label verification script to flag mismatches between PO ship-to data and carrier labels, preventing shipping errors and ensuring data accuracy</li>
+                        <li><strong>Quote-Prep Automation Pipeline:</strong> Developed a parsing script that converts unstructured customer email requests into structured, process-ready QuickBooks jobs</li>
+                        <li>Building AI agent layer to classify customer emails and support quote generation, applying practical LLM techniques to real sales workflows</li>
                     </ul>
                 </div>
 
+                <!-- ✅ NEW: Act Now Bay Area -->
                 <div class="experience-item">
                     <div class="experience-header">
-                        <div>
-                            <h3 class="experience-title">Data Engineering Intern</h3>
-                            <p class="experience-company">Carbon Sustain @ Berkeley SkyDeck</p>
-                        </div>
-                        <span class="experience-date">12/2025 – 2/2026</span>
+                        <div><h3 class="experience-title">Website Architecture & Technical Development</h3><p class="experience-company">Act Now Bay Area · Remote</p></div>
+                        <span class="experience-date">2/2026 – Present</span>
                     </div>
                     <ul class="experience-achievements">
-                        <li>Maintained Django ORM-based data pipeline ingesting vehicle GPS data into PostgreSQL, supporting real-time fleet tracking and carbon emissions reporting across 100+ locations</li>
-                        <li>Developed backend features including OAuth2 authentication and CRUD endpoints using Django</li>
+                        <li>Extended Fung Fellowship dashboard into a collaborative climate data platform; leading site architecture and ongoing development</li>
+                        <li>Secured partnerships with 6+ organizations (including Stanford, UC Berkeley CoolClimate, BAAQMD) to support platform adoption and data collaboration</li>
+                    </ul>
+                </div>
+
+                <!-- ✅ NEW: GotInfo -->
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div><h3 class="experience-title">Data Analytics & Platform Strategy Intern</h3><p class="experience-company">GotInfo · Remote</p></div>
+                        <span class="experience-date">6/2026 – 7/2026</span>
+                    </div>
+                    <ul class="experience-achievements">
+                        <li>Led analysis of 134-respondent consumer study; identified 30.6% market gap (53.7% stated intent vs. 23.1% actual purchase) and validated 91% product-market fit</li>
+                        <li>Built executive analytics dashboard and summary adopted by leadership for investor presentations, onboarding, and grant applications</li>
                     </ul>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <div>
-                            <h3 class="experience-title">Volunteers Relationships Co-Leader</h3>
-                            <p class="experience-company">Taiwan Next Foundation</p>
-                        </div>
+                        <div><h3 class="experience-title">Volunteers Relationships Co-Leader</h3><p class="experience-company">Taiwan Next Foundation</p></div>
                         <span class="experience-date">8/2024 – Present</span>
                     </div>
                     <ul class="experience-achievements">
@@ -1357,18 +660,13 @@
                         <li>Develop volunteer engagement programs and organize team-building activities to strengthen community bonds</li>
                     </ul>
                     <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border-gray);">
-                        <a href="https://www.twnext.com/leadership-team-bio" target="_blank" style="color:var(--primary-black);text-decoration:none;font-weight:500;font-size:0.9rem;display:inline-flex;align-items:center;gap:0.5rem;">
-                            Learn more about Taiwan Next Foundation <span style="font-size:0.8rem;">→</span>
-                        </a>
+                        <a href="https://www.twnext.com/leadership-team-bio" target="_blank" style="color:var(--primary-black);text-decoration:none;font-weight:500;font-size:0.9rem;display:inline-flex;align-items:center;gap:0.5rem;">Learn more about Taiwan Next Foundation <span style="font-size:0.8rem;">→</span></a>
                     </div>
                 </div>
 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <div>
-                            <h3 class="experience-title">Technical Consultant</h3>
-                            <p class="experience-company">IMVITEC Corporation, Taiwan</p>
-                        </div>
+                        <div><h3 class="experience-title">Technical Consultant</h3><p class="experience-company">IMVITEC Corporation, Taiwan</p></div>
                         <span class="experience-date">9/2024 – 8/2025</span>
                     </div>
                     <ul class="experience-achievements">
@@ -1380,10 +678,7 @@
 
                 <div class="experience-item">
                     <div class="experience-header">
-                        <div>
-                            <h3 class="experience-title">Business Analyst / Channel Sales Representative</h3>
-                            <p class="experience-company">Tektronix Taiwan, Ltd., Hsinchu, Taiwan</p>
-                        </div>
+                        <div><h3 class="experience-title">Business Analyst / Channel Sales Representative</h3><p class="experience-company">Tektronix Taiwan, Ltd., Hsinchu, Taiwan</p></div>
                         <span class="experience-date">2/2015 – 6/2022</span>
                     </div>
                     <ul class="experience-achievements">
@@ -1393,11 +688,11 @@
                         <li><strong>Delivered 30% conversion improvement and 10% sales growth</strong> by building analytics pipelines for 150+ weekly customer interactions</li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Recognition Section -->
     <section id="recognition">
         <div class="container">
             <div class="section-header">
@@ -1422,7 +717,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
             <div class="section-header">
@@ -1433,22 +727,10 @@
                 <div class="contact-form">
                     <h3>Send me a message</h3>
                     <form id="contactForm">
-                        <div class="form-group">
-                            <label for="from_name">Your Name</label>
-                            <input type="text" id="from_name" name="from_name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="from_email">Email Address</label>
-                            <input type="email" id="from_email" name="from_email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" placeholder="Tell me about your project or how we can work together..." required></textarea>
-                        </div>
+                        <div class="form-group"><label for="from_name">Your Name</label><input type="text" id="from_name" name="from_name" required></div>
+                        <div class="form-group"><label for="from_email">Email Address</label><input type="email" id="from_email" name="from_email" required></div>
+                        <div class="form-group"><label for="subject">Subject</label><input type="text" id="subject" name="subject" required></div>
+                        <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell me about your project or how we can work together..." required></textarea></div>
                         <button type="submit" class="submit-button">Send Message</button>
                     </form>
                 </div>
@@ -1458,23 +740,19 @@
                     <div class="contact-grid">
                         <div class="contact-card">
                             <div class="contact-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
-                            <h4>Email</h4>
-                            <a href="#" id="contactEmail"></a>
+                            <h4>Email</h4><a href="#" id="contactEmail"></a>
                         </div>
                         <div class="contact-card">
                             <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.87 9.67 19.79 19.79 0 01.82 5.05 2 2 0 012.8 2.87h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 10.9a16 16 0 006.18 6.18l1.19-1.19a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7a2 2 0 011.75 2.03z"/></svg></div>
-                            <h4>Phone</h4>
-                            <a href="tel:(408) 802-4397">(408) 802-4397</a>
+                            <h4>Phone</h4><a href="tel:(408) 802-4397">(408) 802-4397</a>
                         </div>
                         <div class="contact-card">
                             <div class="contact-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 014 0v4M12 10v7"/></svg></div>
-                            <h4>LinkedIn</h4>
-                            <a href="https://linkedin.com/in/szulun-huang/" target="_blank">linkedin.com/in/szulun-huang/</a>
+                            <h4>LinkedIn</h4><a href="https://linkedin.com/in/szulun-huang/" target="_blank">linkedin.com/in/szulun-huang/</a>
                         </div>
                         <div class="contact-card">
                             <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div>
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/szulun" target="_blank">github.com/szulun</a>
+                            <h4>GitHub</h4><a href="https://github.com/szulun" target="_blank">github.com/szulun</a>
                         </div>
                     </div>
                 </div>
@@ -1482,35 +760,27 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Szu Lun (Zoey) Huang. All rights reserved.</p>
+            <p>&copy; 2026 Szu Lun (Zoey) Huang. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- ── Scripts ─────────────────────────────────────────────── -->
     <script>
-        // Obfuscate email
         const u = 'szuh', d = 'berkeley.edu', email = u + '@' + d;
         const heroEmail = document.getElementById('heroEmail');
         if (heroEmail) { heroEmail.href = 'mailto:' + email; heroEmail.textContent = email; }
         const contactEmail = document.getElementById('contactEmail');
         if (contactEmail) { contactEmail.href = 'mailto:' + email; contactEmail.textContent = email; }
     </script>
-
     <script>
-        // Photo Carousel
         const slides = document.querySelectorAll('.carousel-slide');
-        const dots   = document.querySelectorAll('.carousel-dot');
+        const dots = document.querySelectorAll('.carousel-dot');
         let current = 0, timer;
-
         function goToSlide(index) {
-            slides[current].classList.remove('active');
-            dots[current].classList.remove('active');
+            slides[current].classList.remove('active'); dots[current].classList.remove('active');
             current = index;
-            slides[current].classList.add('active');
-            dots[current].classList.add('active');
+            slides[current].classList.add('active'); dots[current].classList.add('active');
             resetTimer();
         }
         function nextSlide() { goToSlide((current + 1) % slides.length); }
@@ -1519,36 +789,28 @@
         document.getElementById('photoCarousel').addEventListener('mouseenter', () => clearInterval(timer));
         document.getElementById('photoCarousel').addEventListener('mouseleave', resetTimer);
     </script>
-
     <script>
-        // EmailJS
         emailjs.init('JbImE9W3g26bpn9wg');
-
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
-
-        // Navbar scroll
         window.addEventListener('scroll', function() {
             document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
         });
-
-        // Contact form
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = document.querySelector('.submit-button');
             const orig = btn.textContent;
             btn.disabled = true; btn.textContent = 'Sending...';
             emailjs.send('service_yuk92ka', 'template_22xmc7u', {
-                from_name:  document.getElementById('from_name').value,
+                from_name: document.getElementById('from_name').value,
                 from_email: document.getElementById('from_email').value,
-                subject:    document.getElementById('subject').value,
-                message:    document.getElementById('message').value,
-                to_name:    'Zoey'
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                to_name: 'Zoey'
             }).then(() => {
                 showNotification('Message sent successfully!', 'success');
                 document.getElementById('contactForm').reset();
@@ -1556,80 +818,54 @@
                 showNotification('Failed to send: ' + (err.text || err.message || 'Unknown error'), 'error');
             }).finally(() => { btn.disabled = false; btn.textContent = orig; });
         });
-
         function showNotification(msg, type) {
             const n = document.getElementById('messageNotification');
-            n.textContent = msg;
-            n.className = 'message-notification ' + type + ' show';
+            n.textContent = msg; n.className = 'message-notification ' + type + ' show';
             setTimeout(() => n.classList.remove('show'), 5000);
         }
-
-        // Scroll animation observer
         const observer = new IntersectionObserver(entries => {
             entries.forEach(e => { if (e.isIntersecting) e.target.style.animationPlayState = 'running'; });
         }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
         document.querySelectorAll('section').forEach(s => observer.observe(s));
     </script>
-
-    <!-- GitHub Activity Script -->
     <script>
     (async function githubActivity() {
         const username = 'szulun';
-        const GH_BASE  = 'https://github.com/' + username;
-
+        const GH_BASE = 'https://github.com/' + username;
         async function fetchRepos() {
             const res = await fetch(`https://api.github.com/users/${username}/repos?sort=pushed&per_page=10`);
             if (!res.ok) throw new Error('repos fetch failed');
             return res.json();
         }
-
         async function fetchCommits(repo) {
             try {
                 const res = await fetch(`https://api.github.com/repos/${username}/${repo}/commits?per_page=6`);
                 if (!res.ok) return [];
                 const data = await res.json();
                 return data.map(c => ({
-                    sha:     c.sha.slice(0, 7),
+                    sha: c.sha.slice(0, 7),
                     message: c.commit.message.split('\n')[0],
-                    date:    new Date(c.commit.author.date).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' }),
-                    url:     c.html_url
+                    date: new Date(c.commit.author.date).toLocaleDateString('en-US', { month:'short', day:'numeric', year:'numeric' }),
+                    url: c.html_url
                 }));
             } catch { return []; }
         }
-
         function renderStats(repos, totalCommits) {
-            const el = document.getElementById('gh-stats');
-            el.innerHTML = `
-                <div class="gh-stat-item">
-                    <a href="${GH_BASE}" target="_blank" class="gh-stat-num">${totalCommits}+</a>
-                    <div class="gh-stat-label">Recent Commits</div>
-                </div>
-                <div class="gh-stat-item">
-                    <a href="${GH_BASE}?tab=repositories" target="_blank" class="gh-stat-num">${repos.length}</a>
-                    <div class="gh-stat-label">Repositories</div>
-                </div>`;
+            document.getElementById('gh-stats').innerHTML = `
+                <div class="gh-stat-item"><a href="${GH_BASE}" target="_blank" class="gh-stat-num">${totalCommits}+</a><div class="gh-stat-label">Recent Commits</div></div>
+                <div class="gh-stat-item"><a href="${GH_BASE}?tab=repositories" target="_blank" class="gh-stat-num">${repos.length}</a><div class="gh-stat-label">Repositories</div></div>`;
         }
-
         function renderAccordion(repoCommitMap) {
             const el = document.getElementById('gh-accordion');
             el.innerHTML = '';
-
             repoCommitMap.forEach(({ repo, repoUrl, commits }) => {
                 if (!commits.length) return;
-
                 const group = document.createElement('div');
                 group.className = 'gh-repo-group';
-
                 const header = document.createElement('div');
                 header.className = 'gh-repo-header';
-                header.innerHTML = `
-                    <div class="gh-repo-header-left">
-                        <a href="${repoUrl}" target="_blank" class="gh-repo-name" onclick="event.stopPropagation()">${repo}</a>
-                        <span class="gh-commit-count">${commits.length} commits</span>
-                    </div>
-                    <span class="gh-chevron">▼</span>`;
+                header.innerHTML = `<div class="gh-repo-header-left"><a href="${repoUrl}" target="_blank" class="gh-repo-name" onclick="event.stopPropagation()">${repo}</a><span class="gh-commit-count">${commits.length} commits</span></div><span class="gh-chevron">▼</span>`;
                 header.addEventListener('click', () => group.classList.toggle('open'));
-
                 const body = document.createElement('div');
                 body.className = 'gh-commits-body';
                 body.innerHTML = commits.map(c => `
@@ -1637,41 +873,30 @@
                         <div class="gh-dot"></div>
                         <div style="flex:1;min-width:0;">
                             <span class="gh-commit-msg" title="${c.message}">${c.message}</span>
-                            <div class="gh-commit-meta">
-                                <span>${c.date}</span>
-                                <span>${c.sha}</span>
-                            </div>
+                            <div class="gh-commit-meta"><span>${c.date}</span><span>${c.sha}</span></div>
                         </div>
                         <span style="font-size:0.75rem;color:var(--medium-gray);flex-shrink:0;margin-left:0.5rem;">↗</span>
                     </a>`).join('');
-
                 group.appendChild(header);
                 group.appendChild(body);
                 el.appendChild(group);
             });
         }
-
         try {
-            const repos     = await fetchRepos();
+            const repos = await fetchRepos();
             const repoNames = repos.map(r => r.name).slice(0, 8);
-            const results   = await Promise.all(repoNames.map(async r => ({
-                repo:    r,
-                repoUrl: `${GH_BASE}/${r}`,
-                commits: await fetchCommits(r)
+            const results = await Promise.all(repoNames.map(async r => ({
+                repo: r, repoUrl: `${GH_BASE}/${r}`, commits: await fetchCommits(r)
             })));
-
             const totalCommits = results.reduce((s, r) => s + r.commits.length, 0);
             renderStats(repos, totalCommits);
             renderAccordion(results);
-
             const first = document.querySelector('.gh-repo-group');
             if (first) first.classList.add('open');
         } catch {
-            document.getElementById('gh-accordion').innerHTML =
-                '<p style="text-align:center;color:var(--medium-gray);">Could not load commits. Please try again later.</p>';
+            document.getElementById('gh-accordion').innerHTML = '<p style="text-align:center;color:var(--medium-gray);">Could not load commits. Please try again later.</p>';
         }
     })();
     </script>
-
 </body>
 </html>
